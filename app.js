@@ -340,6 +340,142 @@ MongoClient.connect(url, {poolSize: 10, bufferMaxEntries: 0, reconnectTries: 500
                   }
                 }
               }
+              if(index === 16){
+                switch(answer) {
+                  case "Travel to a different country." : {
+                    if(answerB.includes("Royal Central School")){
+                      compatibility += compatibilities[index];
+                    }
+                    break;
+                  }
+                  case "Pretended I was a different person." : {
+                    if(answerB.includes("hair")){
+                      compatibility += compatibilities[index];
+                    }
+                    break;
+                  }
+                  case "Something kinky that I'm not proud of." : {
+                    if(answerB.includes("jumping")){
+                      compatibility += compatibilities[index];
+                    }
+                    break;
+                  }
+                  case "Nothing, I've never had the need to be ridiculous for sex." : {
+                    if(answerB.includes("Nothing")){
+                      compatibility += compatibilities[index];
+                    }
+                    break;
+                  }
+                  case "Gave them a very expensive gift." : {
+                    if(answerB.includes("salsa dancing")){
+                      compatibility += compatibilities[index];
+                    }
+                    break;
+                  }
+                }
+                switch(answerB) {
+                  case "Bungee jumping." : {
+                    if(answer.includes("kinky")){
+                      compatibility += compatibilities[index];
+                    }
+                    break;
+                  }
+                  case "Apply to Royal Central School of Speech and Drama (We'll see how it goes ;) )" : {
+                    if(answer.includes("country")){
+                      compatibility += compatibilities[index];
+                    }
+                    break;
+                  }
+                  case "Cut my hair." : {
+                    if(answer.includes("different person")){
+                      compatibility += compatibilities[index];
+                    }
+                    break;
+                  }
+                  case "Took salsa dancing classes (FOR THREE YEARS. DIDN'T GET ME ANYTHING)" : {
+                    if(answer.includes("expensive gift")){
+                      compatibility += compatibilities[index];
+                    }
+                    break;
+                  }
+                }
+              }
+              if(index === 17){
+                switch(answer) {
+                  case "Aquarius" : {
+                    if(answerB.includes("Gemini")){
+                      compatibility += compatibilities[index];
+                    }
+                    break;
+                  }
+                  case "Gemini" : {
+                    if(answerB.includes("Aquarius")){
+                      compatibility += compatibilities[index];
+                    }
+                    break;
+                  }
+                  case "Pisces" : {
+                    if(answerB.includes("Cancer" || answerB.includes("Scorpio"))){
+                      compatibility += compatibilities[index];
+                    }
+                    break;
+                  }
+                  case "Cancer" : {
+                    if(answerB.includes("Pisces" || answerB.includes("Scorpio"))){
+                      compatibility += compatibilities[index];
+                    }
+                    break;
+                  }
+                  case "Scorpio" : {
+                    if(answerB.includes("Pisces" || answerB.includes("Cancer"))){
+                      compatibility += compatibilities[index];
+                    }
+                    break;
+                  }
+                  case "Aries" : {
+                    if(answerB.includes("Leo") || answerB.includes("Libra") || answerB.includes("Sagittarius")){
+                      compatibility += compatibilities[index];
+                    }
+                    break;
+                  }
+                  case "Leo" : {
+                    if(answerB.includes("Aries") || answerB.includes("Libra") || answerB.includes("Sagittarius")){
+                      compatibility += compatibilities[index];
+                    }
+                    break;
+                  }
+                  case "Libra" : {
+                    if(answerB.includes("Leo") || answerB.includes("Aries") || answerB.includes("Sagittarius")){
+                      compatibility += compatibilities[index];
+                    }
+                    break;
+                  }
+                  case "Sagittarius" : {
+                    if(answerB.includes("Leo") || answerB.includes("Libra") || answerB.includes("Aries")){
+                      compatibility += compatibilities[index];
+                    }
+                    break;
+                  }
+                  case "Taurus" : {
+                    if(answerB.includes("Virgo") || answerB.includes("Capricorn")){
+                      compatibility += compatibilities[index];
+                    }
+                    break;
+                  }
+                  case "Capricorn" : {
+                    if(answerB.includes("Virgo") || answerB.includes("Taurus")){
+                      compatibility += compatibilities[index];
+                    }
+                    break;
+                  }
+                  case "Virgo" : {
+                    if(answerB.includes("Taurus") || answerB.includes("Capricorn")){
+                      compatibility += compatibilities[index];
+                    }
+                    break;
+                  }
+                }
+              }
             });
             console.log('this two people have a compatibility of: ' + compatibility + '%');
           });
