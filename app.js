@@ -208,6 +208,72 @@ MongoClient.connect(url, {poolSize: 10, bufferMaxEntries: 0, reconnectTries: 500
                   
                 }
               }
+              if(index === 10){
+                switch(answer) {
+                  case "Commedia dell'arte (A lot of character, but I don't speak)" : {
+                    if(answerB.includes("not a genre of theatre")){
+                      compatibility += compatibilities[index];
+                    }
+                    break;
+                  }
+                  case "Shakespeare (Romantic, but hard to understand)" : {
+                    if(answerB.includes("experimental piece")){
+                      compatibility += compatibilities[index];
+                    }
+                    break;
+                  }
+                  case "An escape room (once you enter, in I'll never let you go)" : {
+                    if(answerB.includes("kid's show")){
+                      compatibility += compatibilities[index];
+                    }
+                    break;
+                  }
+                  case "A musical (Loud and in your face, with a lot of glitter)" : {
+                    if(answerB.includes("A 2 act play")){
+                      compatibility += compatibilities[index];
+                    }
+                    break;
+                  }
+                  case "Opera (People tend to dislike me and fall asleep)" : {
+                    if(answerB.includes("A drama")){
+                      compatibility += compatibilities[index];
+                    }
+                    break;
+                  }
+                }
+                switch(answerB) {
+                  case "A kid's show (Friendly and innocent!)" : {
+                    if(answer.includes("once you enter")){
+                      compatibility += compatibilities[index];
+                    }
+                    break;
+                  }
+                  case "A drama (I have a tragic backstory)" : {
+                    if(answer.includes("Opera")){
+                      compatibility += compatibilities[index];
+                    }
+                    break;
+                  }
+                  case "A 2 act play (I'm everywhere)" : {
+                    if(answer.includes("musical")){
+                      compatibility += compatibilities[index];
+                    }
+                    break;
+                  }
+                  case "An escape room is not a genre of theatre (I refuse to answer this question)" : {
+                    if(answerB.includes("Commedia")){
+                      compatibility += compatibilities[index];
+                    }
+                    break;
+                  }
+                  case "An experimental piece (Good luck figuring me out!)" : {
+                    if(answerB.includes("Shakespeare")){
+                      compatibility += compatibilities[index];
+                    }
+                    break;
+                  }
+                }
+              }
             });
             console.log('this two people have a compatibility of: ' + compatibility + '%');
           });
