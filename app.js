@@ -476,6 +476,54 @@ MongoClient.connect(url, {poolSize: 10, bufferMaxEntries: 0, reconnectTries: 500
                   }
                 }
               }
+              if(index === 20){
+                switch(answer) {
+                  case "Something plain and boring, I wasn't prepared!" : {
+                    if(answerB.includes("week undies")){
+                      compatibility += compatibilities[index];
+                    }
+                    break;
+                  }
+                  case "A little red and lacy thing." : {
+                    if(answerB.includes("sleek, and sexy")){
+                      compatibility += compatibilities[index];
+                    }
+                    break;
+                  }
+                  case "Something funny and colorful" : {
+                    if(answerB.includes("Something funny and colorful")){
+                      compatibility += compatibilities[index];
+                    }
+                    break;
+                  }
+                  case "I'm not wearing any underwear ;)" : {
+                    if(answerB.includes("entirely naked")){
+                      compatibility += compatibilities[index];
+                    }
+                    break;
+                  }
+                }
+                switch(answerB) {
+                  case "I'm entirely naked." : {
+                    if(answer.includes("not wearing any")){
+                      compatibility += compatibilities[index];
+                    }
+                    break;
+                  }
+                  case "My days of the week undies! Yaaay!" : {
+                    if(answer.includes("prepared")){
+                      compatibility += compatibilities[index];
+                    }
+                    break;
+                  }
+                  case "Something black, sleek, and sexy." : {
+                    if(answer.includes("red and lacy")){
+                      compatibility += compatibilities[index];
+                    }
+                    break;
+                  }
+                }
+              }
             });
             console.log('this two people have a compatibility of: ' + compatibility + '%');
           });
