@@ -6,6 +6,8 @@ var url = "mongodb+srv://admin:admin@valentine-abe6i.mongodb.net/test?retryWrite
 //db.copyDatabase(fromdb, todb, fromhost, username, password, mechanism)
 //var MongoClient = require('mongodb').MongoClient;
 
+
+//same answer category
 var sameAnswersCat = new Set();
 sameAnswersCat.add(0);
 sameAnswersCat.add(1);
@@ -19,6 +21,17 @@ sameAnswersCat.add(19);
 sameAnswersCat.add(21);
 sameAnswersCat.add(24);
 sameAnswersCat.add(25);
+//opposite answer category
+var oppositeAnswerCat = new Set();
+oppositeAnswerCat.add(5);
+oppositeAnswerCat.add(18);
+//almost opposite answer category
+var almostOppositeAnswerCat = new Set();
+almostOppositeAnswerCat.add(15);
+almostOppositeAnswerCat.add(23);
+var almostOppositeNeutralAnswer = [];
+almostOppositeNeutralAnswer[15] = "I split it, it's 2020 honey."
+almostOppositeNeutralAnswer[23] = "Sometimes I’m a passenger, sometimes I’m a pilot… what can I say?"
 //% of compatible
 compatibilities = [5, 6, 5, 3, 0, 3, 3, 5, 3, 3, 3, 2, 3, 3, 5, 6, 3, 2, 6, 3, 3, 6, 5, 6, 2, 3];
 
@@ -74,6 +87,21 @@ MongoClient.connect(url, {poolSize: 10, bufferMaxEntries: 0, reconnectTries: 500
               if(sameAnswersCat.has(index)){
                 if(answer === answerListB[index]){
                   compatibility += compatibilities[index];
+                }
+              }
+              if(oppositeAnswerCat.has(index)){
+                if(answer != answerListB[index]){
+                  compatibility += compatibilities[index];
+                }
+              }
+              if(almostOppositeAnswerCat.has(index)){
+                if(answer === almostOppositeNeutralAnswer[index] && answerListB[index] === almostOppositeNeutralAnswer[index]){
+                  compatibility += compatibilities[index];
+                }
+                if(answer != almostOppositeNeutralAnswer[index] && answerListB[index] != almostOppositeNeutralAnswer[index]){
+                  if(answer != answerListB[index]){
+                    compatibility += compatibilities[index];
+                  }
                 }
               }
             });
