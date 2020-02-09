@@ -153,6 +153,61 @@ MongoClient.connect(url, {poolSize: 10, bufferMaxEntries: 0, reconnectTries: 500
                   }
                 }
               }
+              if(index === 9){
+                switch (answer) {
+                  case "Gin&Tonic" : {
+                    if(answerB === "A shot (or 12) of Tequila"){
+                      compatibility += compatibilities[index];
+                    }
+                    break;
+                  }
+                  case "IPA" : {
+                    if(answerB === "Lager"){
+                      compatibility += compatibilities[index];
+                    }
+                    break;
+                  }
+                  case "Cider" : {
+                    if(answerB === "A fruity cocktail"){
+                      compatibility += compatibilities[index];
+                    }
+                    break;
+                  }
+                  case "The most expensive thing at the bar" : {
+                    if(answerB === "Nesquick"){
+                      compatibility += compatibilities[index];
+                    }
+                    break;
+                  }
+                }
+                switch (answerB) {
+                  case "Gin&Tonic" : {
+                    if(answer === "A shot (or 12) of Tequila"){
+                      compatibility += compatibilities[index];
+                    }
+                    break;
+                  }
+                  case "IPA" : {
+                    if(answer === "Lager"){
+                      compatibility += compatibilities[index];
+                    }
+                    break;
+                  }
+                  case "Cider" : {
+                    if(answer === "A fruity cocktail"){
+                      compatibility += compatibilities[index];
+                    }
+                    break;
+                  }
+                  case "The most expensive thing at the bar" : {
+                    if(answer === "Nesquick"){
+                      compatibility += compatibilities[index];
+                    }
+                    break;
+                  }
+                  
+                }
+              }
             });
             console.log('this two people have a compatibility of: ' + compatibility + '%');
           });
