@@ -261,13 +261,79 @@ MongoClient.connect(url, {poolSize: 10, bufferMaxEntries: 0, reconnectTries: 500
                     break;
                   }
                   case "An escape room is not a genre of theatre (I refuse to answer this question)" : {
-                    if(answerB.includes("Commedia")){
+                    if(answer.includes("Commedia")){
                       compatibility += compatibilities[index];
                     }
                     break;
                   }
                   case "An experimental piece (Good luck figuring me out!)" : {
-                    if(answerB.includes("Shakespeare")){
+                    if(answer.includes("Shakespeare")){
+                      compatibility += compatibilities[index];
+                    }
+                    break;
+                  }
+                }
+              }
+              if(index === 14){
+                switch(answer) {
+                  case "Awkwardly dancing next to the other person and hoping they notice me." : {
+                    if(answerB.includes("I just yell")){
+                      compatibility += compatibilities[index];
+                    }
+                    break;
+                  }
+                  case "A lot of laughing and eye contact." : {
+                    if(answerB.includes("Impress them with my")){
+                      compatibility += compatibilities[index];
+                    }
+                    break;
+                  }
+                  case "Showing a little skin" : {
+                    if(answerB.includes("forward text")){
+                      compatibility += compatibilities[index];
+                    }
+                    break;
+                  }
+                  case "I don't have any flirting moves. I'm taking this quiz to find true love." : {
+                    if(answerB.includes("beneath me")){
+                      compatibility += compatibilities[index];
+                    }
+                    break;
+                  }
+                  case "Asking them to be my study partner." : {
+                    if(answerB.includes("deep talk.")){
+                      compatibility += compatibilities[index];
+                    }
+                    break;
+                  }
+                }
+                switch(answerB) {
+                  case "A vulnerable and deep talk." : {
+                    if(answer.includes("study partner")){
+                      compatibility += compatibilities[index];
+                    }
+                    break;
+                  }
+                  case "Flirting is beneath me." : {
+                    if(answer.includes("flirting moves")){
+                      compatibility += compatibilities[index];
+                    }
+                    break;
+                  }
+                  case "I just yell 'Hey I like you!' while they walk by." : {
+                    if(answer.includes("dancing next to the other person")){
+                      compatibility += compatibilities[index];
+                    }
+                    break;
+                  }
+                  case "A flirty and forward text." : {
+                    if(answer.includes("skin")){
+                      compatibility += compatibilities[index];
+                    }
+                    break;
+                  }
+                  case "Impress them with my intelligence and wit." : {
+                    if(answer.includes("eye contact")){
                       compatibility += compatibilities[index];
                     }
                     break;
