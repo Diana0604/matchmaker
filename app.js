@@ -55,24 +55,29 @@ MongoClient.connect(url, {poolSize: 10, bufferMaxEntries: 0, reconnectTries: 500
       }
 
       dbTest.collection('users').find({}).toArray(function(err, users){
-        
-
+        //get userss
         usersAnswered = [];
         users.forEach(function(user){
           if(user.answerList.length > 0){
             usersAnswered.push(user);
           }
         });
+
+        //iterate (for now just the first two)
         var userA = usersAnswered[0];
         var userB = usersAnswered[1];
-
         var compatibility = 0;
-
-        //tidy answer promise
+        //tidy answers
         tidy(userA.answerList).then(answerListA => {
-          console.log(answerListA);
           tidy(userB.answerList).then(answerListB => {
-            console.log(answerListB);
+            answerListA.forEach(function(answer, index){
+              if(sameAnswersCat.has(index)){
+                if(answer === answerListB[index]){
+                  compatibility += compatibilities[index];
+                }
+              }
+            });
+            console.log('this two people have a compatibility of: ' + compatibility + '%');
           });
         });
       });
