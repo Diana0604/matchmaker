@@ -524,6 +524,54 @@ MongoClient.connect(url, {poolSize: 10, bufferMaxEntries: 0, reconnectTries: 500
                   }
                 }
               }
+              if(index === 22){
+                switch(answer) {
+                  case "I put my hand on their knee and give them a knowing look." : {
+                    if(answerB.includes("initiate a drunk")){
+                      compatibility += compatibilities[index];
+                    }
+                    break;
+                  }
+                  case "I entice them back to my flat with the promise of a good movie and wine." : {
+                    if(answerB.includes("I entice them back to my flat with the promise of a good movie and wine.")){
+                      compatibility += compatibilities[index];
+                    }
+                    break;
+                  }
+                  case "I scream 'Wanna have sex!?' as they walk by." : {
+                    if(answerB.includes("After a year of planning")){
+                      compatibility += compatibilities[index];
+                    }
+                    break;
+                  }
+                  case "I write a song about my feelings." : {
+                    if(answerB.includes("I perform my mating dance for them.")){
+                      compatibility += compatibilities[index];
+                    }
+                    break;
+                  }
+                }
+                switch(answerB) {
+                  case "I perform my mating dance for them." : {
+                    if(answer.includes("song about")){
+                      compatibility += compatibilities[index];
+                    }
+                    break;
+                  }
+                  case "After a year of planning, I walk up to them and say hi." : {
+                    if(answer.includes("scream")){
+                      compatibility += compatibilities[index];
+                    }
+                    break;
+                  }
+                  case "I initiate a drunk make out." : {
+                    if(answer.includes("knee")){
+                      compatibility += compatibilities[index];
+                    }
+                    break;
+                  }
+                }
+              }
             });
             console.log('this two people have a compatibility of: ' + compatibility + '%');
           });
