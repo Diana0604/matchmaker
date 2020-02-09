@@ -84,6 +84,7 @@ MongoClient.connect(url, {poolSize: 10, bufferMaxEntries: 0, reconnectTries: 500
         tidy(userA.answerList).then(answerListA => {
           tidy(userB.answerList).then(answerListB => {
             answerListA.forEach(function(answer, index){
+              answerB = answerListB[index];
               if(sameAnswersCat.has(index)){
                 if(answer === answerListB[index]){
                   compatibility += compatibilities[index];
@@ -101,6 +102,54 @@ MongoClient.connect(url, {poolSize: 10, bufferMaxEntries: 0, reconnectTries: 500
                 if(answer != almostOppositeNeutralAnswer[index] && answerListB[index] != almostOppositeNeutralAnswer[index]){
                   if(answer != answerListB[index]){
                     compatibility += compatibilities[index];
+                  }
+                }
+              }
+              if(index === 7){
+                switch (answer) {
+                  case "The scent of your lover." : {
+                    if(answerB === "The scent of your lover."){
+                      compatibility += compatibilities[index];
+                    }
+                    break;
+                  }
+                  case "Pancakes being cooked." : {
+                    if(answerB === "The musty smell of a wooden cabin isolated from the hustle and bustle of the city."){
+                      compatibility += compatibilities[index];
+                    }
+                    break;
+                  }
+                  case "A fresh rain shower." : {
+                    if(answerB === "The salty ocean breeze from the deck of your house boat."){
+                      compatibility += compatibilities[index];
+                    }
+                    break;
+                  }
+                  case "A jasmine scented bubble bath." : {
+                    if(answerB === "An orange tree growing outside your window."){
+                      compatibility += compatibilities[index];
+                    }
+                    break;
+                  }
+                }
+                switch (answerB) {
+                  case "Pancakes being cooked." : {
+                    if(answer === "The musty smell of a wooden cabin isolated from the hustle and bustle of the city."){
+                      compatibility += compatibilities[index];
+                    }
+                    break;
+                  }
+                  case "A fresh rain shower." : {
+                    if(answer === "The salty ocean breeze from the deck of your house boat."){
+                      compatibility += compatibilities[index];
+                    }
+                    break;
+                  }
+                  case "A jasmine scented bubble bath." : {
+                    if(answer === "An orange tree growing outside your window."){
+                      compatibility += compatibilities[index];
+                    }
+                    break;
                   }
                 }
               }
