@@ -46,7 +46,11 @@ MongoClient.connect(url, {poolSize: 10, bufferMaxEntries: 0, reconnectTries: 500
       var dbTest = db.db("test");
       
       //tidying algorithm
-      function tidy(untidyAnswerList){
+      function tidy(user){
+        if(user.isTidy){
+          return (user.answerList);
+        }
+        var untidyAnswerList = user.answerList;
         return new Promise((resolve, reject) => {
         var count = 0;
         var answerList = [];
@@ -60,6 +64,8 @@ MongoClient.connect(url, {poolSize: 10, bufferMaxEntries: 0, reconnectTries: 500
             count++;
             answerList[Number(questionIndex)-1] = answer[0].choice;
             if(count === 26){
+              user.answerList = answerList;
+              user.isTidy = true;
               resolve(answerList);
             }
           });
@@ -81,8 +87,8 @@ MongoClient.connect(url, {poolSize: 10, bufferMaxEntries: 0, reconnectTries: 500
         var userB = usersAnswered[1];
         var compatibility = 0;
         //tidy answers
-        tidy(userA.answerList).then(answerListA => {
-          tidy(userB.answerList).then(answerListB => {
+        tidy(userA).then(answerListA => {
+          tidy(userB).then(answerListB => {
             answerListA.forEach(function(answer, index){
               answerB = answerListB[index];
               if(sameAnswersCat.has(index)){
@@ -574,7 +580,11 @@ MongoClient.connect(url, {poolSize: 10, bufferMaxEntries: 0, reconnectTries: 500
               }
             });
             console.log('this two people have a compatibility of: ' + compatibility + '%');
+          }).catch((error)=>{
+            console.log(error);
           });
+        }).catch((error) => {
+          console.log(error);
         });
       });
     }
