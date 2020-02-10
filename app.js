@@ -221,7 +221,7 @@ MongoClient.connect(url, {poolSize: 10, bufferMaxEntries: 0, reconnectTries: 500
         console.log(err);
     }
     else {
-      var dbTest = db.db("test");
+      var dbTest = db.db("real");
       //tidying algorithm
       function tidy(user){
         var untidyAnswerList = user.answerList;
@@ -270,13 +270,13 @@ MongoClient.connect(url, {poolSize: 10, bufferMaxEntries: 0, reconnectTries: 500
                 usernameA = infoUserA.username;
                 answerListB = infoUserB.answerList;
                 usernameB = infoUserB.username;
-                var str = 'Comparing: ' + usernameA + ' with ' + usernameB + '\n';
+                var str = usernameA + '\n' + usernameB + '\n';
                 userA.compatibility[userB._id] = 0;
                 answerListA.forEach(function(answerA, index){
                 var answerB = answerListB[index];
                 userA.compatibility[userB._id] += compareAnswers(index, answerA, answerB);
               });
-              fs.appendFile('results.txt',str + 'these two people have a compatibility of: ' + userA.compatibility[userB._id] + '%\n' , function (err) { 
+              fs.appendFile('results.txt',str + userA.compatibility[userB._id] + '\n' , function (err) { 
                 if (err)
                 console.log(err);
                 });
