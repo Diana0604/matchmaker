@@ -1,5 +1,5 @@
 var query = require('cli-interact').getYesNo;
-
+var fs = require('fs');
 
 var MongoClient = require('mongodb').MongoClient;
 var url = "mongodb+srv://admin:admin@valentine-abe6i.mongodb.net/test?retryWrites=true&w=majority";
@@ -24,51 +24,44 @@ almostOppositeNeutralAnswer[23] = "Sometimes I’m a passenger, sometimes I’m 
 var specialQuestionsCat = new Set(); specialQuestionsCat.add(7); specialQuestionsCat.add(9); specialQuestionsCat.add(10);
 specialQuestionsCat.add(14); specialQuestionsCat.add(16); specialQuestionsCat.add(20); specialQuestionsCat.add(22);
 var specialQuestions = [];
-specialQuestions[7] = {
-  "The scent of your lover.":"The scent of your lover.",
-  "Pancakes being cooked.":"The musty smell of a wooden cabin isolated from the hustle and bustle of the city.",
-  "A fresh rain shower.":"The salty ocean breeze from the deck of your house boat.",
-  "A jasmine scented bubble bath.":"An orange tree growing outside your window."
-}
-specialQuestions[9] = {
-  "Gin&Tonic":"A shot (or 12) of Tequila",
-  "IPA":"Lager",
-  "Cider":"A fruity cocktail",
-  "The most expensive thing at the bar":"Nesquik"
-}
-specialQuestions[10] = {
-  "Commedia dell’arte (A lot of character, but I don’t speak)":"An escape room is not a genre of theatre (I refuse to answer this question)",
-  "Shakespeare (Romantic, but hard to understand)":"An experimental piece (Good luck figuring me out!)",
-  "An escape room (once you enter, in I’ll never let you go)":"A kid’s show (Friendly and innocent!)",
-  "A musical (Loud and in your face, with a lot of glitter)":"A 2 act play (I’m everywhere)",
-  "Opera (People tend to dislike me and fall asleep)":"A drama (I have a tragic backstory)"
-}
-specialQuestions[14] = {
-  "Awkwardly dancing next to the other person and hoping they notice me.":"I just yell ‘Hey I like you!’ while they walk by.",
-  "A lot of laughing and eye contact.":"Impress them with my intelligence and wit.",
-  "Showing a little skin.":"A flirty and forward text.",
-  "I don’t have any flirting moves. I’m taking this quiz to find true love.":"Flirting is beneath me.",
-  "Asking them to be my study partner.":"A vulnerable and deep talk."
-}
-specialQuestions[16] = {
-  "Travel to a different country.":"Apply to Royal Central School of Speech and Drama (We’ll see how it goes ;) )",
-  "Pretended I was a different person.":"Cut my hair.",
-  "Something kinky that I’m not proud of.":"Bungee jumping.",
-  "Nothing, I’ve never had the need to be ridiculous for sex.":"Nothing, I’ve never had the need to be ridiculous for sex.",
-  "Gave them a very expensive gift.":"Took salsa dancing classes (FOR THREE YEARS. DIDN’T GET ME ANYTHING)"
-}
-specialQuestions[20] = {
-  "Something plain and boring, I wasn’t prepared!":"My days of the week undies! Yaaay!",
-  "A little red and lacy thing.":"Something black, sleek, and sexy.",
-  "Something funny and colorful.":"Something funny and colorful.",
-  "I’m not wearing any underwear ;)":"I'm entirely naked."
-}
-specialQuestions[22] = {
-  "I put my hand on their knee and give them a knowing look.":"I initiate a drunk make out.",
-  "I entice them back to my flat with the promise of a good movie and wine.":"I entice them back to my flat with the promise of a good movie and wine.",
-  "I scream ‘Wanna have sex!?’ as they walk by.":"After a year of planning, I walk up to them and say hi.",
-  "I write them a song about my feelings.":"I perform my mating dance for them."
-}
+specialQuestions[7] = new Map();
+specialQuestions[7].set("The scent of your lover.", "The scent of your lover.");
+specialQuestions[7].set("Pancakes being cooked.", "The musty smell of a wooden cabin isolated from the hustle and bustle of the city.");
+specialQuestions[7].set("A fresh rain shower.", "The salty ocean breeze from the deck of your house boat.");
+specialQuestions[7].set("A jasmine scented bubble bath.", "An orange tree growing outside your window.");
+specialQuestions[9] = new Map();
+specialQuestions[9].set("Gin&Tonic", "A shot (or 12) of Tequila");
+specialQuestions[9].set("IPA","Lager");
+specialQuestions[9].set("Cider","A fruity cocktail");
+specialQuestions[9].set("The most expensive thing at the bar","Nesquik");
+specialQuestions[10] = new Map();
+specialQuestions[10].set("Commedia dell’arte (A lot of character, but I don’t speak)","An escape room is not a genre of theatre (I refuse to answer this question)");
+specialQuestions[10].set("Shakespeare (Romantic, but hard to understand)","An experimental piece (Good luck figuring me out!)");
+specialQuestions[10].set("An escape room (once you enter, in I’ll never let you go)","A kid’s show (Friendly and innocent!)");
+specialQuestions[10].set("A musical (Loud and in your face, with a lot of glitter)","A 2 act play (I’m everywhere)");
+specialQuestions[10].set("Opera (People tend to dislike me and fall asleep)","A drama (I have a tragic backstory)");
+specialQuestions[14] = new Map();
+specialQuestions[14].set("Awkwardly dancing next to the other person and hoping they notice me.","I just yell ‘Hey I like you!’ while they walk by.");
+specialQuestions[14].set("A lot of laughing and eye contact.","Impress them with my intelligence and wit.");
+specialQuestions[14].set("Showing a little skin.","A flirty and forward text.");
+specialQuestions[14].set("I don’t have any flirting moves. I’m taking this quiz to find true love.","Flirting is beneath me.");
+specialQuestions[14].set("Asking them to be my study partner.","A vulnerable and deep talk.");
+specialQuestions[16] = new Map();
+specialQuestions[16].set("Travel to a different country.","Apply to Royal Central School of Speech and Drama (We’ll see how it goes ;) )");
+specialQuestions[16].set("Pretended I was a different person.","Cut my hair.");
+specialQuestions[16].set("Something kinky that I’m not proud of.","Bungee jumping.");
+specialQuestions[16].set("Nothing, I’ve never had the need to be ridiculous for sex.","Nothing, I’ve never had the need to be ridiculous for sex.");
+specialQuestions[16].set("Gave them a very expensive gift.","Took salsa dancing classes (FOR THREE YEARS. DIDN’T GET ME ANYTHING)");
+specialQuestions[20] =  new Map();
+specialQuestions[20].set("Something plain and boring, I wasn’t prepared!","My days of the week undies! Yaaay!");
+specialQuestions[20].set("A little red and lacy thing.","Something black, sleek, and sexy.");
+specialQuestions[20].set("Something funny and colorful.","Something funny and colorful.");
+specialQuestions[20].set("I’m not wearing any underwear ;)","I'm entirely naked.");
+specialQuestions[22] =  new Map();
+specialQuestions[22].set("I put my hand on their knee and give them a knowing look.","I initiate a drunk make out.");
+specialQuestions[22].set("I entice them back to my flat with the promise of a good movie and wine.","I entice them back to my flat with the promise of a good movie and wine.");
+specialQuestions[22].set("I scream ‘Wanna have sex!?’ as they walk by.","After a year of planning, I walk up to them and say hi.");
+specialQuestions[22].set("I write them a song about my feelings.","I perform my mating dance for them.");
 horoscope = {
   "Aquarius":["Gemini"],
   "Gemini":["Aquarius"],
@@ -94,48 +87,104 @@ console.log(totalC);
 */
 
 function compareAnswers(index, answerA, answerB){
-  //console.log('comparing: ');
-  //console.log('answerA: ' + answerA);
-  //console.log('answerB: ' + answerB);
+  var str = "";
+  if(specialQuestionsCat.has(index)) {
+    str = 'Comparing: ' + answerA + ' with ' + answerB + '\n';
+  }
   if(sameAnswersCat.has(index)){
-    //console.log('is same answer');
+    //str += 'kind of answer: same answer \n';
     if(answerA === answerB){
-      //console.log('matched');
-      return compatibilities[index];
+      //str += ' add ' + compatibilities[index] + '% of comp \n';
+      /*
+      fs.appendFile('answers.txt', str, function (err) { 
+          if (err)
+      console.log(err);
+      });
+      */
+     
+     return compatibilities[index];
     }
+    /*
+    fs.appendFile('answers.txt', str, function (err) { 
+      if (err)
+        console.log(err);
+    });
+    */
     return 0;
   }
   if(oppositeAnswerCat.has(index)){
-    //console.log('is opposite answer');
+    //str += 'answers.txt', 'kind of answer: opposite answer \n';
     if(answerA != answerB){
-      //console.log('it\s a match');
+      /*
+      fs.appendFile('answers.txt', str + ' add ' + compatibilities[index] + '% of comp \n', function (err) { 
+        if (err)
+        console.log(err);
+      });
+      */
       return compatibilities[index];
     }
+    /*
+    fs.appendFile('answers.txt', str, function (err) { 
+      if (err)
+      console.log(err);
+    });
+    */
     return 0;
   }
   if(almostOppositeAnswerCat.has(index)){
-    //console.log('is almost opposite answer');
+    //str += 'kind of answer: almost opposite answer \n';
     if(answerA === almostOppositeNeutralAnswer[index] && answerB === almostOppositeNeutralAnswer[index]){
-      //console.log('same answer and comp');
+      /*
+      fs.appendFile('answers.txt', str + ' add ' + compatibilities[index] + '% of comp \n', function (err) { 
+        if (err)
+          console.log(err);
+      });
+      */
       return compatibilities[index];
     }
     if(answerA != almostOppositeNeutralAnswer[index] && answerB != almostOppositeNeutralAnswer[index]){
       if(answerA != answerB){
-        //console.log('diff comp answers');
-        return compatibilities[index];
+        /*
+        fs.appendFile('answers.txt', str + ' add ' + compatibilities[index] + '% of comp \n', function (err) { 
+          if (err)
+            console.log(err);
+        });
+        */
+      return compatibilities[index];
       }
     }
+    /*
+    fs.appendFile('answers.txt', str, function (err) { 
+      if (err)
+        console.log(err);
+    });
+    */
     return 0;
   }
   if(specialQuestionsCat.has(index)){
-    //console.log('special question');
-    if(specialQuestions[index].answerA === answerB || specialQuestions[index].answerB === answerA){
-      //console.log('match');
+    str += 'kind of answer: special question \n';
+    str += answerA + ' has ' + specialQuestions[index].get(answerA) + '\n';
+    str += answerB + ' has ' + specialQuestions[index].get(answerB) + '\n';
+    //if(specialQuestions[index].answerA === answerB || specialQuestions[index].answerB === answerA){
+    if(specialQuestions[index].get(answerA) === answerB || specialQuestions[index].get(answerB) === answerA){
+      fs.appendFile('answers.txt', str + ' add ' + compatibilities[index] + '% of comp \n', function (err) { 
+        if (err)
+        console.log(err);
+      });
       return compatibilities[index];
     }
+    fs.appendFile('answers.txt', str, function (err) { 
+      if (err)
+      console.log(err);
+    });
     return 0;
   }
   if(index === 17){
+    /*
+    fs.appendFile('answers.txt', str + 'kind of answer: horoscope (not doing it) \n', function (err) { 
+      if (err)
+    console.log(err);
+});*/
     //console.log('question 17');
     //console.log(answerA);
     //console.log(horoscope[answerA]);
@@ -150,11 +199,16 @@ function compareAnswers(index, answerA, answerB){
     //}
     return 0;
   }
+  /*
+  fs.appendFile('answers.txt', str + 'kind of answer: not implemented: ' + index + ' \n', function (err) { 
+        if (err)
+    console.log(err);
+    });
+    */
   return 0;
 };
 
 MongoClient.connect(url, {poolSize: 10, bufferMaxEntries: 0, reconnectTries: 5000, useNewUrlParser: true,useUnifiedTopology: false}, function(err, db){
-//MongoClient.connect(url, function(err, db) {
     if (err) {
         console.log(err);
     }
@@ -194,40 +248,41 @@ MongoClient.connect(url, {poolSize: 10, bufferMaxEntries: 0, reconnectTries: 500
           }
         });
 
-        //iterate (for now just the first two)
-        usersAnswered.forEach(function(userA, userIndex){
-          userIndex = 0;
+        //iterate
+        //usersAnswered.forEach(function(userA, userIndex){
+          var userA = usersAnswered[1];
           userA.compatibility = [];
           tidy(userA).then(infoUserA => {
-            for(var i = userIndex + 1; i < usersAnswered.length; i++){
+            //for(var i = userIndex + 1; i < usersAnswered.length; i++){
               //console.log('index: ' + i);
-              var userB = usersAnswered[i];
+              //var userB = usersAnswered[i];
+              var userB = usersAnswered[2];
               //tidy answers
               tidy(userB).then(infoUserB => {
                 answerListA = infoUserA.answerList;
                 usernameA = infoUserA.username;
                 answerListB = infoUserB.answerList;
                 usernameB = infoUserB.username;
-                //console.log('comparing: ');
-                //console.log(usernameA);
-                //console.log(answerListA);
-                //console.log('with:');
-                //console.log(usernameB);
-                //console.log(answerListB);
+                var str = 'Comparing: ' + usernameA + ' with ' + usernameB + '\n';
                 userA.compatibility[userB._id] = 0;
                 answerListA.forEach(function(answerA, index){
                 var answerB = answerListB[index];
                 userA.compatibility[userB._id] += compareAnswers(index, answerA, answerB);
-                //var answer = query('ready for next');
               });
+              fs.appendFile('results.txt',str + 'these two people have a compatibility of: ' + userA.compatibility[userB._id] + '%' , function (err) { 
+                if (err)
+                console.log(err);
+                });
               console.log('these two people have a compatibility of: ' + userA.compatibility[userB._id] + '%');
             }).catch((error)=>{
               console.log(error);
             });
-            }
+            //}
+            /*
           }).catch((error) => {
             console.log(error);
           });
+          */
         });
       });
     }
