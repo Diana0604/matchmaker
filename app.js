@@ -1,6 +1,6 @@
 var query = require('cli-interact').getYesNo;
 var fs = require('fs');
-var DEBUG = 1;
+var DEBUG = -1;
 
 var MongoClient = require('mongodb').MongoClient;
 var url = "mongodb+srv://admin:admin@valentine-abe6i.mongodb.net/test?retryWrites=true&w=majority";
@@ -19,7 +19,7 @@ var oppositeAnswerCat = new Set(); oppositeAnswerCat.add(5); oppositeAnswerCat.a
 //almost opposite answer category
 var almostOppositeAnswerCat = new Set(); almostOppositeAnswerCat.add(15); almostOppositeAnswerCat.add(23);
 var almostOppositeNeutralAnswer = [];
-almostOppositeNeutralAnswer[15] = "I split it, it's 2020 honey."
+almostOppositeNeutralAnswer[15] = "I split it, it’s 2020 honey."
 almostOppositeNeutralAnswer[23] = "Sometimes I’m a passenger, sometimes I’m a pilot… what can I say?"
 //special questions
 var specialQuestionsCat = new Set(); specialQuestionsCat.add(7); specialQuestionsCat.add(9); specialQuestionsCat.add(10);
@@ -28,7 +28,7 @@ var specialQuestions = [];
 specialQuestions[7] = new Map();
 specialQuestions[7].set("The scent of your lover.", "The scent of your lover.");
 specialQuestions[7].set("Pancakes being cooked.", "The musty smell of a wooden cabin isolated from the hustle and bustle of the city.");
-specialQuestions[7].set("A fresh rain shower.", "The salty ocean breeze from the deck of your house boat.");
+specialQuestions[7].set("A fresh rain shower.", "The salty ocean breeze from the deck of your house boat. ");
 specialQuestions[7].set("A jasmine scented bubble bath.", "An orange tree growing outside your window.");
 specialQuestions[9] = new Map();
 specialQuestions[9].set("Gin&Tonic", "A shot (or 12) of Tequila");
@@ -56,7 +56,7 @@ specialQuestions[16].set("Gave them a very expensive gift.","Took salsa dancing 
 specialQuestions[20] =  new Map();
 specialQuestions[20].set("Something plain and boring, I wasn’t prepared!","My days of the week undies! Yaaay!");
 specialQuestions[20].set("A little red and lacy thing.","Something black, sleek, and sexy.");
-specialQuestions[20].set("Something funny and colorful.","Something funny and colorful.");
+specialQuestions[20].set("Something funny and colorful. ","Something funny and colorful. ");
 specialQuestions[20].set("I’m not wearing any underwear ;)","I'm entirely naked.");
 specialQuestions[22] =  new Map();
 specialQuestions[22].set("I put my hand on their knee and give them a knowing look.","I initiate a drunk make out. ");
@@ -125,6 +125,7 @@ function compareAnswers(index, answerA, answerB){
   }
   if(almostOppositeAnswerCat.has(index)){
     if(DEBUG === 1 || DEBUG === 4) str += 'kind of answer: almost opposite answer \n';
+    if(DEBUG === 1 || DEBUG === 4) str += 'neutral answer for this is: ' + almostOppositeNeutralAnswer[index] +  '\n';
     if(answerA === almostOppositeNeutralAnswer[index] && answerB === almostOppositeNeutralAnswer[index]){
       if(DEBUG === 1 || DEBUG === 4) fs.appendFile('answers.txt', str + ' add ' + compatibilities[index] + '% of comp \n', function (err) { 
         if (err)
@@ -189,7 +190,7 @@ function compareAnswers(index, answerA, answerB){
   if(index === 3){
     answer3A = answerA;
     answer3B = answerB;
-    if(DEBUG == 1 || DEBUT === 7) str += "kind of question: love language (give) \n";
+    if(DEBUG == 1 || DEBUG === 7) str += "kind of question: love language (give) \n";
     fs.appendFile('answers.txt', str, function(err){
       if(err) console.log(err);
     });
@@ -199,11 +200,11 @@ function compareAnswers(index, answerA, answerB){
     if(DEBUG === 1 || DEBUG == 7) str+= "kind of question: (receive) love language \n";
     var comp = 0;
     if(answer3A === answerB){
-      if(DEBUG === 1 || DEBUG == 7) str += 'answer3A and 4B are the same\n Adding ' + compatibilities[3] + '\n';
+      if(DEBUG === 1 || DEBUG == 7) str += 'answer3A and 4B are the same\n Adding ' + compatibilities[3] + '% of comp \n';
       comp += compatibilities[3];
     }
     if(answer3B === answerA){
-      if(DEBUG === 1 || DEBUG == 7) str += 'answer3B and 4A are the same\n Adding ' + compatibilities[3] + '\n';
+      if(DEBUG === 1 || DEBUG == 7) str += 'answer3B and 4A are the same\n Adding ' + compatibilities[3] + '% of comp \n';
       comp += compatibilities[4];
     }
     if(DEBUG === 1 || DEBUG === 7) fs.appendFile('answers.txt', str, function (err) { 
@@ -255,14 +256,14 @@ MongoClient.connect(url, {poolSize: 10, bufferMaxEntries: 0, reconnectTries: 500
         });
 
         //iterate
-        //usersAnswered.forEach(function(userA, userIndex){
-          var userA = usersAnswered[1];
+        usersAnswered.forEach(function(userA, userIndex){
+          //var userA = usersAnswered[32];
           userA.compatibility = [];
           tidy(userA).then(infoUserA => {
-            //for(var i = userIndex + 1; i < usersAnswered.length; i++){
+            for(var i = userIndex + 1; i < usersAnswered.length; i++){
               //console.log('index: ' + i);
-              //var userB = usersAnswered[i];
-              var userB = usersAnswered[2];
+              var userB = usersAnswered[i];
+              //var userB = usersAnswered[31];
               //tidy answers
               tidy(userB).then(infoUserB => {
                 answerListA = infoUserA.answerList;
@@ -283,11 +284,11 @@ MongoClient.connect(url, {poolSize: 10, bufferMaxEntries: 0, reconnectTries: 500
             }).catch((error)=>{
               console.log(error);
             });
-          //  }
+          }
           }).catch((error) => {
             console.log(error);
           });
         });
-      //});
+      });
     }
 });
