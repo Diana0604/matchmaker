@@ -47,29 +47,30 @@ MongoClient.connect(url, {poolSize: 10, bufferMaxEntries: 0, reconnectTries: 500
       
       //tidying algorithm
       function tidy(user){
-        if(user.isTidy){
-          return (user.answerList);
-        }
         var untidyAnswerList = user.answerList;
         return new Promise((resolve, reject) => {
-        var count = 0;
-        var answerList = [];
-        untidyAnswerList.forEach(function(answerObj, index){
-          var id = answerObj._id;
-          dbTest.collection('answers').find({'_id':id}).toArray( function(err, answer){
-            var questionIndex = answer[0].question.question.substring(0,2);
-            if(questionIndex[1] === '.'){
-              questionIndex = questionIndex.substring(0,1);
-            }
-            count++;
-            answerList[Number(questionIndex)-1] = answer[0].choice;
-            if(count === 26){
-              user.answerList = answerList;
-              user.isTidy = true;
-              resolve(answerList);
-            }
-          });
-        });
+          if(user.isTidy){
+            resolve (user.answerList);
+          } else{
+            var count = 0;
+            var answerList = [];
+            untidyAnswerList.forEach(function(answerObj, index){
+            var id = answerObj._id;
+              dbTest.collection('answers').find({'_id':id}).toArray( function(err, answer){
+                var questionIndex = answer[0].question.question.substring(0,2);
+                if(questionIndex[1] === '.'){
+                  questionIndex = questionIndex.substring(0,1);
+                }
+                count++;
+                answerList[Number(questionIndex)-1] = answer[0].choice;
+                if(count === 26){
+                  user.answerList = answerList;
+                  user.isTidy = true;
+                  resolve(answerList);
+                }
+              });
+            });
+          }
         });
       }
 
