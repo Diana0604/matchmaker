@@ -1,5 +1,6 @@
 var query = require('cli-interact').getYesNo;
 var fs = require('fs');
+var DEBUG = 6;
 
 var MongoClient = require('mongodb').MongoClient;
 var url = "mongodb+srv://admin:admin@valentine-abe6i.mongodb.net/test?retryWrites=true&w=majority";
@@ -68,15 +69,15 @@ horoscope.set("Gemini",["Aquarius"]);
 horoscope.set("Pisces",["Cancer", "Scorpio"]);
 horoscope.set("Cancer",["Pisces", "Scorpio"]);
 horoscope.set("Scorpio",["Cancer", "Pisces"]);
-horoscope.set("Sagittarius",["Aries", "Leo", "Libra"]);
-horoscope.set("Leo",["Aries", "Sagittarius", "Libra"]);
-horoscope.set("Libra",["Aries", "Leo", "Sagittarius"]);
+horoscope.set("Sagittarius",["Aries ", "Leo", "Libra"]);
+horoscope.set("Leo",["Aries ", "Sagittarius", "Libra"]);
+horoscope.set("Libra",["Aries ", "Leo", "Sagittarius"]);
 horoscope.set("Taurus",["Virgo", "Capricorn"]);
 horoscope.set("Virgo",["Taurus", "Capricorn"]);
 horoscope.set("Capricorn",["Virgo", "Taurus"]);
-horoscope.set("Aries",["Leo", "Libra", "Sagittarius"]);
+horoscope.set("Aries ",["Leo", "Libra", "Sagittarius"]);
 //% of compatible
-compatibilities = [5, 6, 5, 1.5, 1.5, 3, 3, 5, 3, 3, 3, 2, 3, 3, 5, 6, 3, 2, 6, 3, 3, 6, 5, 6, 2, 3];
+compatibilities = [5, 6, 5, 3, 3, 3, 3, 5, 3, 3, 3, 2, 3, 3, 5, 6, 3, 2, 6, 3, 3, 6, 5, 6, 2, 3];
 /*
 totalC = 0;
 compatibilities.forEach((comp) => {
@@ -90,124 +91,101 @@ answer3B = "";
 
 function compareAnswers(index, answerA, answerB){
   var str = "";
-  str += "comparing " + answerA + " with " + answerB;
-  if(specialQuestionsCat.has(index)) {
-    str = 'Comparing: ' + answerA + ' with ' + answerB + '\n';
-  }
+  if(DEBUG != -1) str += "comparing " + answerA + " with " + answerB;
   if(sameAnswersCat.has(index)){
-    //str += 'kind of answer: same answer \n';
+    if(DEBUG === 1 || DEBUG === 2) str += 'kind of answer: same answer \n';
     if(answerA === answerB){
-      //str += ' add ' + compatibilities[index] + '% of comp \n';
-      /*
-      fs.appendFile('answers.txt', str, function (err) { 
+      if(DEBUG === 1 || DEBUG === 2) str += ' add ' + compatibilities[index] + '% of comp \n';
+      if(DEBUG === 1 || DEBUG === 2) fs.appendFile('answers.txt', str, function (err) { 
           if (err)
       console.log(err);
       });
-      */
-     
      return compatibilities[index];
     }
-    /*
-    fs.appendFile('answers.txt', str, function (err) { 
+    if(DEBUG === 1 || DEBUG === 2) fs.appendFile('answers.txt', str, function (err) { 
       if (err)
         console.log(err);
     });
-    */
     return 0;
   }
   if(oppositeAnswerCat.has(index)){
-    //str += 'answers.txt', 'kind of answer: opposite answer \n';
+    if(DEBUG === 1 || DEBUG === 3) str += 'answers.txt', 'kind of answer: opposite answer \n';
     if(answerA != answerB){
-      /*
-      fs.appendFile('answers.txt', str + ' add ' + compatibilities[index] + '% of comp \n', function (err) { 
+      if(DEBUG === 1 || DEBUG === 3) fs.appendFile('answers.txt', str + ' add ' + compatibilities[index] + '% of comp \n', function (err) { 
         if (err)
         console.log(err);
       });
-      */
       return compatibilities[index];
     }
-    /*
-    fs.appendFile('answers.txt', str, function (err) { 
+    if(DEBUG === 1 || DEBUG === 3) fs.appendFile('answers.txt', str, function (err) { 
       if (err)
       console.log(err);
     });
-    */
     return 0;
   }
   if(almostOppositeAnswerCat.has(index)){
-    //str += 'kind of answer: almost opposite answer \n';
+    if(DEBUG === 1 || DEBUG === 4) str += 'kind of answer: almost opposite answer \n';
     if(answerA === almostOppositeNeutralAnswer[index] && answerB === almostOppositeNeutralAnswer[index]){
-      /*
-      fs.appendFile('answers.txt', str + ' add ' + compatibilities[index] + '% of comp \n', function (err) { 
+      if(DEBUG === 1 || DEBUG === 4) fs.appendFile('answers.txt', str + ' add ' + compatibilities[index] + '% of comp \n', function (err) { 
         if (err)
           console.log(err);
       });
-      */
       return compatibilities[index];
     }
     if(answerA != almostOppositeNeutralAnswer[index] && answerB != almostOppositeNeutralAnswer[index]){
       if(answerA != answerB){
-        /*
-        fs.appendFile('answers.txt', str + ' add ' + compatibilities[index] + '% of comp \n', function (err) { 
+        if(DEBUG === 1 || DEBUG === 4) fs.appendFile('answers.txt', str + ' add ' + compatibilities[index] + '% of comp \n', function (err) { 
           if (err)
             console.log(err);
         });
-        */
       return compatibilities[index];
       }
     }
-    /*
-    fs.appendFile('answers.txt', str, function (err) { 
+    if(DEBUG === 1 || DEBUG === 4) fs.appendFile('answers.txt', str, function (err) { 
       if (err)
         console.log(err);
     });
-    */
     return 0;
   }
   //special
   if(specialQuestionsCat.has(index)){
-    str += 'kind of answer: special question \n';
-    str += answerA + ' has ' + specialQuestions[index].get(answerA) + '\n';
-    str += answerB + ' has ' + specialQuestions[index].get(answerB) + '\n';
-    //if(specialQuestions[index].answerA === answerB || specialQuestions[index].answerB === answerA){
+    if(DEBUG === 1 || DEBUG === 5) str += 'kind of answer: special question \n';
+    if(DEBUG === 1 || DEBUG === 5) str += answerA + ' has ' + specialQuestions[index].get(answerA) + '\n';
+    if(DEBUG === 1 || DEBUG === 5) str += answerB + ' has ' + specialQuestions[index].get(answerB) + '\n';
     if(specialQuestions[index].get(answerA) === answerB || specialQuestions[index].get(answerB) === answerA){
-      /*
-      fs.appendFile('answers.txt', str + ' add ' + compatibilities[index] + '% of comp \n', function (err) { 
+      if(DEBUG === 1 || DEBUG === 5) fs.appendFile('answers.txt', str + ' add ' + compatibilities[index] + '% of comp \n', function (err) { 
         if (err)
         console.log(err);
       });
-      */
       return compatibilities[index];
     }
-    /*
-    fs.appendFile('answers.txt', str, function (err) { 
+    if(DEBUG === 1 || DEBUG === 5) fs.appendFile('answers.txt', str, function (err) { 
       if (err)
       console.log(err);
     });
-    */
     return 0;
   }
   //horoscope
   if(index === 17){
-    /*
-    fs.appendFile('answers.txt', str + 'kind of answer: horoscope (not doing it) \n', function (err) { 
-      if (err)
-    console.log(err);
-});*/
-    //console.log('question 17');
-    //console.log(answerA);
-    //console.log(horoscope[answerA]);
-    //console.log(answerB);
-    //console.log(horoscope[answerB]);
-    //if(String(answerA) === 'Aries' || String(answerB) === 'Aries'){
-    //  console.log('aries DETECTED');
-    //}
+    if(DEBUG === 1 || DEBUG === 6) str += ' \n kind of answer: horoscope \n';
+    if(DEBUG === 1 || DEBUG === 6) str += 'horoscope a: ' + answerA + ' horoscopeB: ' + answerB + '\n';
+    if(DEBUG === 1 || DEBUG === 6) str += 'compatibility of a: ' + horoscope.get(answerA) + '\n';
+    if(DEBUG === 1 || DEBUG === 6) fs.appendFile('answers.txt', str, function(err){
+      if(err) console.log(err);
+    });
     if(horoscope.get(answerA).includes(answerB)){
-      //console.log('match');
+      if(DEBUG === 1 || DEBUG === 6) str += 'matched!';
+      if(DEBUG === 1 || DEBUG === 6) fs.appendFile('answers.txt', str, function(err){
+        if(err) console.log(err);
+      });
       return compatibilities[index];
     }
+    if(DEBUG === 1 || DEBUG === 6) fs.appendFile('answers.txt', str, function(err){
+      if(err) console.log(err);
+    });
     return 0;
   }
+  //love languages
   if(index === 3){
     answer3A = answerA;
     answer3B = answerB;
@@ -223,12 +201,6 @@ function compareAnswers(index, answerA, answerB){
     }
     return comp;
   }
-  /*
-  fs.appendFile('answers.txt', str + 'kind of answer: not implemented: ' + index + ' \n', function (err) { 
-        if (err)
-    console.log(err);
-    });
-    */
   return 0;
 };
 
@@ -238,7 +210,6 @@ MongoClient.connect(url, {poolSize: 10, bufferMaxEntries: 0, reconnectTries: 500
     }
     else {
       var dbTest = db.db("test");
-      
       //tidying algorithm
       function tidy(user){
         var untidyAnswerList = user.answerList;
@@ -273,14 +244,14 @@ MongoClient.connect(url, {poolSize: 10, bufferMaxEntries: 0, reconnectTries: 500
         });
 
         //iterate
-        //usersAnswered.forEach(function(userA, userIndex){
-          var userA = usersAnswered[1];
+        usersAnswered.forEach(function(userA, userIndex){
+          //var userA = usersAnswered[1];
           userA.compatibility = [];
           tidy(userA).then(infoUserA => {
-            //for(var i = userIndex + 1; i < usersAnswered.length; i++){
+            for(var i = userIndex + 1; i < usersAnswered.length; i++){
               //console.log('index: ' + i);
-              //var userB = usersAnswered[i];
-              var userB = usersAnswered[2];
+              var userB = usersAnswered[i];
+              //var userB = usersAnswered[2];
               //tidy answers
               tidy(userB).then(infoUserB => {
                 answerListA = infoUserA.answerList;
@@ -293,7 +264,7 @@ MongoClient.connect(url, {poolSize: 10, bufferMaxEntries: 0, reconnectTries: 500
                 var answerB = answerListB[index];
                 userA.compatibility[userB._id] += compareAnswers(index, answerA, answerB);
               });
-              fs.appendFile('results.txt',str + 'these two people have a compatibility of: ' + userA.compatibility[userB._id] + '%' , function (err) { 
+              fs.appendFile('results.txt',str + 'these two people have a compatibility of: ' + userA.compatibility[userB._id] + '%\n' , function (err) { 
                 if (err)
                 console.log(err);
                 });
@@ -301,12 +272,10 @@ MongoClient.connect(url, {poolSize: 10, bufferMaxEntries: 0, reconnectTries: 500
             }).catch((error)=>{
               console.log(error);
             });
-            //}
-            /*
+            }
           }).catch((error) => {
             console.log(error);
           });
-          */
         });
       });
     }

@@ -1,7 +1,1074 @@
+Comparing: Diana with Person A
+these two people have a compatibility of: 30%
+Comparing: Diana with Person b
+these two people have a compatibility of: 21%
+Comparing: Diana with Person c
+these two people have a compatibility of: 12%
+Comparing: Diana with Person d
+these two people have a compatibility of: 19%
+Comparing: Diana with Person 1
+these two people have a compatibility of: 18%
+Comparing: Diana with Person e
+these two people have a compatibility of: 26%
+Comparing: Diana with Person f
+these two people have a compatibility of: 27%
+Comparing: Diana with Person 2
+these two people have a compatibility of: 30%
+Comparing: Diana with Person g
+these two people have a compatibility of: 28%
+Comparing: Diana with Person 3
+these two people have a compatibility of: 20%
+Comparing: Diana with Person h
+these two people have a compatibility of: 20%
+Comparing: Diana with Person 4
+these two people have a compatibility of: 18%
+Comparing: Diana with Person i
+these two people have a compatibility of: 25%
+Comparing: Diana with Person A
+these two people have a compatibility of: 30%
+Comparing: Diana with Person b
+these two people have a compatibility of: 21%
+Comparing: Diana with Person c
+these two people have a compatibility of: 12%
+Comparing: Diana with Person d
+these two people have a compatibility of: 19%
+Comparing: Diana with Person 1
+these two people have a compatibility of: 18%
+Comparing: Diana with Person e
+these two people have a compatibility of: 26%
+Comparing: Diana with Person f
+these two people have a compatibility of: 27%
+Comparing: Diana with Person 2
+these two people have a compatibility of: 30%
+Comparing: Diana with Person A
+these two people have a compatibility of: 30%
+Comparing: Diana with Person b
+these two people have a compatibility of: 21%
+Comparing: Diana with Person c
+these two people have a compatibility of: 12%
+Comparing: Diana with Person d
+these two people have a compatibility of: 19%
+Comparing: Diana with Person 1
+these two people have a compatibility of: 18%
+Comparing: Diana with Person e
+these two people have a compatibility of: 26%
+Comparing: Diana with Person f
+these two people have a compatibility of: 27%
+Comparing: Diana with Person 2
+these two people have a compatibility of: 30%
+Comparing: Diana with Person g
+these two people have a compatibility of: 28%
+Comparing: Diana with Person 3
+these two people have a compatibility of: 20%
+Comparing: Diana with Person 4
+these two people have a compatibility of: 18%
+Comparing: Diana with Person i
+these two people have a compatibility of: 25%
+Comparing: Diana with Person j
+these two people have a compatibility of: 22%
+Comparing: Diana with Person h
+these two people have a compatibility of: 20%
+Comparing: Diana with Person k
+these two people have a compatibility of: 18%
+Comparing: Diana with Person l
+these two people have a compatibility of: 15%
+Comparing: Diana with Person m
+these two people have a compatibility of: 21%
+Comparing: Diana with Person n
+these two people have a compatibility of: 29%
+Comparing: Diana with Person p
+these two people have a compatibility of: 28%
+Comparing: Diana with Person o
+these two people have a compatibility of: 36%
+Comparing: Diana with Person q
+these two people have a compatibility of: 11%
+Comparing: Diana with Person r
+these two people have a compatibility of: 12%
+Comparing: Diana with Person s
+these two people have a compatibility of: 15%
+Comparing: Diana with Person t
+these two people have a compatibility of: 9%
+Comparing: Diana with Person u
+these two people have a compatibility of: 12%
+Comparing: Diana with Person v
+these two people have a compatibility of: 11%
+Comparing: Diana with Person w
+these two people have a compatibility of: 9%
+Comparing: Diana with Person x
+these two people have a compatibility of: 20%
+Comparing: Diana with Person y
+these two people have a compatibility of: 20%
+Comparing: Diana with Person z
+these two people have a compatibility of: 18%
+Comparing: Diana with fake sarah
+these two people have a compatibility of: 15%
+Comparing: Diana with study buddy 123
+these two people have a compatibility of: 20%
+Comparing: Diana with Fake Sarah's Perfect Match
+these two people have a compatibility of: 14%
+Comparing: Diana with Study buddy 456
+these two people have a compatibility of: 26%
+Comparing: Diana with sexyperson
+these two people have a compatibility of: 23%
+Comparing: Diana with wild card
+these two people have a compatibility of: 20%
+Comparing: Diana with sexualbeing
+these two people have a compatibility of: 32%
+Comparing: Diana with vwild
+these two people have a compatibility of: 15%
+Comparing: Diana with Sarah Sarah Sarah 
+these two people have a compatibility of: 21%
+Comparing: Diana with Sayruh
+these two people have a compatibility of: 45%
 Comparing: Person A with Person b
-these two people have a compatibility of: 82%Comparing: Person A with Person b
-these two people have a compatibility of: 84%Comparing: Person A with Person b
-these two people have a compatibility of: 84%Comparing: Person A with Person b
-these two people have a compatibility of: 84%Comparing: Person A with Person b
-these two people have a compatibility of: 84%Comparing: Person A with Person b
-these two people have a compatibility of: 87%
+these two people have a compatibility of: 90%
+Comparing: Person A with Person d
+these two people have a compatibility of: 23%
+Comparing: Person A with Person 1
+these two people have a compatibility of: 21%
+Comparing: Person A with Person c
+these two people have a compatibility of: 0%
+Comparing: Person A with Person e
+these two people have a compatibility of: 6%
+Comparing: Person A with Person f
+these two people have a compatibility of: 15%
+Comparing: Person A with Person 2
+these two people have a compatibility of: 13%
+Comparing: Person A with Person 3
+these two people have a compatibility of: 37%
+Comparing: Person A with Person h
+these two people have a compatibility of: 21%
+Comparing: Person A with Person 4
+these two people have a compatibility of: 18%
+Comparing: Person A with Person g
+these two people have a compatibility of: 3%
+Comparing: Person A with Person j
+these two people have a compatibility of: 34%
+Comparing: Person A with Person i
+these two people have a compatibility of: 23%
+Comparing: Person A with Person k
+these two people have a compatibility of: 5%
+Comparing: Person A with Person l
+these two people have a compatibility of: 21%
+Comparing: Person A with Person m
+these two people have a compatibility of: 15%
+Comparing: Person A with Person n
+these two people have a compatibility of: 35%
+Comparing: Person A with Person o
+these two people have a compatibility of: 37%
+Comparing: Person A with Person p
+these two people have a compatibility of: 38%
+Comparing: Person A with Person q
+these two people have a compatibility of: 14%
+Comparing: Person A with Person r
+these two people have a compatibility of: 21%
+Comparing: Person A with Person t
+these two people have a compatibility of: 32%
+Comparing: Person A with Person u
+these two people have a compatibility of: 0%
+Comparing: Person A with Person v
+these two people have a compatibility of: 21%
+Comparing: Person A with Person s
+these two people have a compatibility of: 3%
+Comparing: Person A with Person w
+these two people have a compatibility of: 14%
+Comparing: Person A with Person x
+these two people have a compatibility of: 15%
+Comparing: Person A with Person y
+these two people have a compatibility of: 0%
+Comparing: Person A with Person z
+these two people have a compatibility of: 21%
+Comparing: Person A with fake sarah
+these two people have a compatibility of: 21%
+Comparing: Person A with Fake Sarah's Perfect Match
+these two people have a compatibility of: 11%
+Comparing: Person A with study buddy 123
+these two people have a compatibility of: 20%
+Comparing: Person A with Study buddy 456
+these two people have a compatibility of: 26%
+Comparing: Person A with sexyperson
+these two people have a compatibility of: 14%
+Comparing: Person A with sexualbeing
+these two people have a compatibility of: 23%
+Comparing: Person A with wild card
+these two people have a compatibility of: 3%
+Comparing: Person A with vwild
+these two people have a compatibility of: 21%
+Comparing: Person b with Person c
+these two people have a compatibility of: 21%
+Comparing: Person A with Sarah Sarah Sarah 
+these two people have a compatibility of: 24%
+Comparing: Person A with Sayruh
+these two people have a compatibility of: 33%
+Comparing: Person b with Person d
+these two people have a compatibility of: 8%
+Comparing: Person b with Person 1
+these two people have a compatibility of: 6%
+Comparing: Person b with Person e
+these two people have a compatibility of: 15%
+Comparing: Person b with Person f
+these two people have a compatibility of: 6%
+Comparing: Person b with Person 2
+these two people have a compatibility of: 37%
+Comparing: Person b with Person g
+these two people have a compatibility of: 21%
+Comparing: Person b with Person 3
+these two people have a compatibility of: 25%
+Comparing: Person b with Person h
+these two people have a compatibility of: 3%
+Comparing: Person b with Person 4
+these two people have a compatibility of: 6%
+Comparing: Person b with Person i
+these two people have a compatibility of: 34%
+Comparing: Person b with Person j
+these two people have a compatibility of: 18%
+Comparing: Person b with Person k
+these two people have a compatibility of: 27%
+Comparing: Person b with Person l
+these two people have a compatibility of: 5%
+Comparing: Person b with Person m
+these two people have a compatibility of: 24%
+Comparing: Person b with Person n
+these two people have a compatibility of: 26%
+Comparing: Person b with Person o
+these two people have a compatibility of: 54%
+Comparing: Person b with Person p
+these two people have a compatibility of: 28%
+Comparing: Person b with Person r
+these two people have a compatibility of: 3%
+Comparing: Person b with Person s
+these two people have a compatibility of: 29%
+Comparing: Person b with Person q
+these two people have a compatibility of: 32%
+Comparing: Person b with Person t
+these two people have a compatibility of: 3%
+Comparing: Person b with Person u
+these two people have a compatibility of: 21%
+Comparing: Person b with Person v
+these two people have a compatibility of: 0%
+Comparing: Person b with Person w
+these two people have a compatibility of: 21%
+Comparing: Person b with Person x
+these two people have a compatibility of: 14%
+Comparing: Person b with Person y
+these two people have a compatibility of: 21%
+Comparing: Person b with Person z
+these two people have a compatibility of: 0%
+Comparing: Person b with fake sarah
+these two people have a compatibility of: 11%
+Comparing: Person b with Fake Sarah's Perfect Match
+these two people have a compatibility of: 21%
+Comparing: Person b with study buddy 123
+these two people have a compatibility of: 26%
+Comparing: Person b with Study buddy 456
+these two people have a compatibility of: 20%
+Comparing: Person b with sexyperson
+these two people have a compatibility of: 23%
+Comparing: Person b with wild card
+these two people have a compatibility of: 21%
+Comparing: Person b with sexualbeing
+these two people have a compatibility of: 17%
+Comparing: Person b with Sarah Sarah Sarah 
+these two people have a compatibility of: 12%
+Comparing: Person b with Sayruh
+these two people have a compatibility of: 23%
+Comparing: Person b with vwild
+these two people have a compatibility of: 3%
+Comparing: Person c with Person d
+these two people have a compatibility of: 93%
+Comparing: Person c with Person 1
+these two people have a compatibility of: 24%
+Comparing: Person c with Person e
+these two people have a compatibility of: 20%
+Comparing: Person c with Person f
+these two people have a compatibility of: 18%
+Comparing: Person c with Person 2
+these two people have a compatibility of: 3%
+Comparing: Person c with Person g
+these two people have a compatibility of: 0%
+Comparing: Person c with Person 3
+these two people have a compatibility of: 36%
+Comparing: Person c with Person h
+these two people have a compatibility of: 21%
+Comparing: Person c with Person i
+these two people have a compatibility of: 0%
+Comparing: Person c with Person 4
+these two people have a compatibility of: 29%
+Comparing: Person c with Person j
+these two people have a compatibility of: 21%
+Comparing: Person c with Person k
+these two people have a compatibility of: 5%
+Comparing: Person c with Person l
+these two people have a compatibility of: 23%
+Comparing: Person c with Person m
+these two people have a compatibility of: 25%
+Comparing: Person c with Person n
+these two people have a compatibility of: 20%
+Comparing: Person c with Person o
+these two people have a compatibility of: 12%
+Comparing: Person c with Person p
+these two people have a compatibility of: 32%
+Comparing: Person c with Person q
+these two people have a compatibility of: 3%
+Comparing: Person c with Person r
+these two people have a compatibility of: 24%
+Comparing: Person c with Person s
+these two people have a compatibility of: 17%
+Comparing: Person c with Person t
+these two people have a compatibility of: 35%
+Comparing: Person c with Person u
+these two people have a compatibility of: 47%
+Comparing: Person c with Person v
+these two people have a compatibility of: 88%
+Comparing: Person c with Person w
+these two people have a compatibility of: 9%
+Comparing: Person c with Person x
+these two people have a compatibility of: 18%
+Comparing: Person c with Person y
+these two people have a compatibility of: 17%
+Comparing: Person c with Person z
+these two people have a compatibility of: 24%
+Comparing: Person c with fake sarah
+these two people have a compatibility of: 43%
+Comparing: Person c with Fake Sarah's Perfect Match
+these two people have a compatibility of: 42%
+Comparing: Person c with Study buddy 456
+these two people have a compatibility of: 18%
+Comparing: Person c with study buddy 123
+these two people have a compatibility of: 9%
+Comparing: Person c with sexyperson
+these two people have a compatibility of: 16%
+Comparing: Person c with sexualbeing
+these two people have a compatibility of: 23%
+Comparing: Person c with wild card
+these two people have a compatibility of: 19%
+Comparing: Person c with vwild
+these two people have a compatibility of: 46%
+Comparing: Person c with Sayruh
+these two people have a compatibility of: 21%
+Comparing: Person c with Sarah Sarah Sarah 
+these two people have a compatibility of: 21%
+Comparing: Person d with Person 1
+these two people have a compatibility of: 9%
+Comparing: Person d with Person e
+these two people have a compatibility of: 9%
+Comparing: Person d with Person f
+these two people have a compatibility of: 11%
+Comparing: Person d with Person 2
+these two people have a compatibility of: 21%
+Comparing: Person d with Person 3
+these two people have a compatibility of: 26%
+Comparing: Person d with Person g
+these two people have a compatibility of: 21%
+Comparing: Person d with Person h
+these two people have a compatibility of: 6%
+Comparing: Person d with Person i
+these two people have a compatibility of: 21%
+Comparing: Person d with Person 4
+these two people have a compatibility of: 17%
+Comparing: Person d with Person j
+these two people have a compatibility of: 6%
+Comparing: Person d with Person m
+these two people have a compatibility of: 28%
+Comparing: Person d with Person l
+these two people have a compatibility of: 11%
+Comparing: Person d with Person k
+these two people have a compatibility of: 21%
+Comparing: Person d with Person o
+these two people have a compatibility of: 15%
+Comparing: Person d with Person n
+these two people have a compatibility of: 5%
+Comparing: Person d with Person q
+these two people have a compatibility of: 26%
+Comparing: Person d with Person p
+these two people have a compatibility of: 20%
+Comparing: Person d with Person s
+these two people have a compatibility of: 38%
+Comparing: Person d with Person r
+these two people have a compatibility of: 9%
+Comparing: Person d with Person t
+these two people have a compatibility of: 18%
+Comparing: Person d with Person u
+these two people have a compatibility of: 83%
+Comparing: Person d with Person w
+these two people have a compatibility of: 18%
+Comparing: Person d with Person x
+these two people have a compatibility of: 3%
+Comparing: Person d with Person v
+these two people have a compatibility of: 54%
+Comparing: Person d with Person y
+these two people have a compatibility of: 24%
+Comparing: Person d with Person z
+these two people have a compatibility of: 23%
+Comparing: Person d with fake sarah
+these two people have a compatibility of: 40%
+Comparing: Person d with Fake Sarah's Perfect Match
+these two people have a compatibility of: 47%
+Comparing: Person d with study buddy 123
+these two people have a compatibility of: 12%
+Comparing: Person d with Study buddy 456
+these two people have a compatibility of: 3%
+Comparing: Person d with sexyperson
+these two people have a compatibility of: 19%
+Comparing: Person d with sexualbeing
+these two people have a compatibility of: 7%
+Comparing: Person d with wild card
+these two people have a compatibility of: 43%
+Comparing: Person d with vwild
+these two people have a compatibility of: 28%
+Comparing: Person d with Sarah Sarah Sarah 
+these two people have a compatibility of: 20%
+Comparing: Person d with Sayruh
+these two people have a compatibility of: 11%
+Comparing: Person 1 with Person e
+these two people have a compatibility of: 21%
+Comparing: Person 1 with Person f
+these two people have a compatibility of: 18%
+Comparing: Person 1 with Person 2
+these two people have a compatibility of: 30%
+Comparing: Person 1 with Person 3
+these two people have a compatibility of: 9%
+Comparing: Person 1 with Person g
+these two people have a compatibility of: 23%
+Comparing: Person 1 with Person h
+these two people have a compatibility of: 27%
+Comparing: Person 1 with Person 4
+these two people have a compatibility of: 19%
+Comparing: Person 1 with Person i
+these two people have a compatibility of: 27%
+Comparing: Person 1 with Person j
+these two people have a compatibility of: 24%
+Comparing: Person 1 with Person k
+these two people have a compatibility of: 27%
+Comparing: Person 1 with Person l
+these two people have a compatibility of: 21%
+Comparing: Person 1 with Person m
+these two people have a compatibility of: 18%
+Comparing: Person 1 with Person n
+these two people have a compatibility of: 11%
+Comparing: Person 1 with Person o
+these two people have a compatibility of: 21%
+Comparing: Person 1 with Person q
+these two people have a compatibility of: 33%
+Comparing: Person 1 with Person r
+these two people have a compatibility of: 18%
+Comparing: Person 1 with Person p
+these two people have a compatibility of: 15%
+Comparing: Person 1 with Person s
+these two people have a compatibility of: 40%
+Comparing: Person 1 with Person t
+these two people have a compatibility of: 25%
+Comparing: Person 1 with Person u
+these two people have a compatibility of: 29%
+Comparing: Person 1 with Person v
+these two people have a compatibility of: 18%
+Comparing: Person 1 with Person x
+these two people have a compatibility of: 15%
+Comparing: Person 1 with Person w
+these two people have a compatibility of: 15%
+Comparing: Person 1 with Person y
+these two people have a compatibility of: 23%
+Comparing: Person 1 with Person z
+these two people have a compatibility of: 17%
+Comparing: Person 1 with fake sarah
+these two people have a compatibility of: 28%
+Comparing: Person 1 with Fake Sarah's Perfect Match
+these two people have a compatibility of: 26%
+Comparing: Person 1 with study buddy 123
+these two people have a compatibility of: 23%
+Comparing: Person 1 with Study buddy 456
+these two people have a compatibility of: 18%
+Comparing: Person 1 with sexualbeing
+these two people have a compatibility of: 33%
+Comparing: Person 1 with wild card
+these two people have a compatibility of: 18%
+Comparing: Person 1 with sexyperson
+these two people have a compatibility of: 36%
+Comparing: Person 1 with vwild
+these two people have a compatibility of: 12%
+Comparing: Person 1 with Sarah Sarah Sarah 
+these two people have a compatibility of: 20%
+Comparing: Person 1 with Sayruh
+these two people have a compatibility of: 11%
+Comparing: Person f with Person 2
+these two people have a compatibility of: 29%
+Comparing: Person f with Person g
+these two people have a compatibility of: 23%
+Comparing: Person f with Person 3
+these two people have a compatibility of: 15%
+Comparing: Person f with Person h
+these two people have a compatibility of: 6%
+Comparing: Person f with Person 4
+these two people have a compatibility of: 17%
+Comparing: Person f with Person i
+these two people have a compatibility of: 18%
+Comparing: Person f with Person l
+these two people have a compatibility of: 9%
+Comparing: Person f with Person k
+these two people have a compatibility of: 15%
+Comparing: Person f with Person j
+these two people have a compatibility of: 9%
+Comparing: Person f with Person m
+these two people have a compatibility of: 15%
+Comparing: Person f with Person n
+these two people have a compatibility of: 11%
+Comparing: Person f with Person o
+these two people have a compatibility of: 18%
+Comparing: Person f with Person p
+these two people have a compatibility of: 6%
+Comparing: Person f with Person r
+these two people have a compatibility of: 11%
+Comparing: Person f with Person q
+these two people have a compatibility of: 17%
+Comparing: Person f with Person t
+these two people have a compatibility of: 6%
+Comparing: Person f with Person u
+these two people have a compatibility of: 20%
+Comparing: Person f with Person v
+these two people have a compatibility of: 17%
+Comparing: Person f with Person s
+these two people have a compatibility of: 15%
+Comparing: Person f with Person w
+these two people have a compatibility of: 25%
+Comparing: Person f with Person x
+these two people have a compatibility of: 19%
+Comparing: Person f with Person y
+these two people have a compatibility of: 81%
+Comparing: Person f with Person z
+these two people have a compatibility of: 58%
+Comparing: Person f with fake sarah
+these two people have a compatibility of: 28%
+Comparing: Person f with Fake Sarah's Perfect Match
+these two people have a compatibility of: 22%
+Comparing: Person f with study buddy 123
+these two people have a compatibility of: 18%
+Comparing: Person f with Study buddy 456
+these two people have a compatibility of: 14%
+Comparing: Person f with sexyperson
+these two people have a compatibility of: 41%
+Comparing: Person f with sexualbeing
+these two people have a compatibility of: 26%
+Comparing: Person f with wild card
+these two people have a compatibility of: 21%
+Comparing: Person f with Sarah Sarah Sarah 
+these two people have a compatibility of: 29%
+Comparing: Person f with vwild
+these two people have a compatibility of: 18%
+Comparing: Person f with Sayruh
+these two people have a compatibility of: 15%
+Comparing: Person 2 with Person g
+these two people have a compatibility of: 6%
+Comparing: Person 2 with Person 3
+these two people have a compatibility of: 23%
+Comparing: Person 2 with Person h
+these two people have a compatibility of: 29%
+Comparing: Person 2 with Person 4
+these two people have a compatibility of: 20%
+Comparing: Person 2 with Person i
+these two people have a compatibility of: 31%
+Comparing: Person 2 with Person j
+these two people have a compatibility of: 49%
+Comparing: Person 2 with Person k
+these two people have a compatibility of: 0%
+Comparing: Person 2 with Person l
+these two people have a compatibility of: 21%
+Comparing: Person 2 with Person m
+these two people have a compatibility of: 22%
+Comparing: Person 2 with Person o
+these two people have a compatibility of: 21%
+Comparing: Person 2 with Person n
+these two people have a compatibility of: 42%
+Comparing: Person 2 with Person p
+these two people have a compatibility of: 23%
+Comparing: Person 2 with Person q
+these two people have a compatibility of: 0%
+Comparing: Person 2 with Person r
+these two people have a compatibility of: 29%
+Comparing: Person 2 with Person s
+these two people have a compatibility of: 3%
+Comparing: Person 2 with Person t
+these two people have a compatibility of: 24%
+Comparing: Person 2 with Person u
+these two people have a compatibility of: 6%
+Comparing: Person 2 with Person v
+these two people have a compatibility of: 24%
+Comparing: Person 2 with Person w
+these two people have a compatibility of: 22%
+Comparing: Person 2 with Person x
+these two people have a compatibility of: 36%
+Comparing: Person 2 with Person y
+these two people have a compatibility of: 8%
+Comparing: Person 2 with fake sarah
+these two people have a compatibility of: 21%
+Comparing: Person 2 with Fake Sarah's Perfect Match
+these two people have a compatibility of: 6%
+Comparing: Person 2 with study buddy 123
+these two people have a compatibility of: 19%
+Comparing: Person 2 with Person z
+these two people have a compatibility of: 35%
+Comparing: Person 2 with Study buddy 456
+these two people have a compatibility of: 26%
+Comparing: Person 2 with sexyperson
+these two people have a compatibility of: 33%
+Comparing: Person 2 with sexualbeing
+these two people have a compatibility of: 45%
+Comparing: Person 2 with wild card
+these two people have a compatibility of: 10%
+Comparing: Person 2 with vwild
+these two people have a compatibility of: 31%
+Comparing: Person 2 with Sarah Sarah Sarah 
+these two people have a compatibility of: 40%
+Comparing: Person 2 with Sayruh
+these two people have a compatibility of: 31%
+Comparing: Person g with Person 3
+these two people have a compatibility of: 35%
+Comparing: Person g with Person h
+these two people have a compatibility of: 92%
+Comparing: Person g with Person 4
+these two people have a compatibility of: 47%
+Comparing: Person g with Person i
+these two people have a compatibility of: 5%
+Comparing: Person g with Person j
+these two people have a compatibility of: 21%
+Comparing: Person g with Person k
+these two people have a compatibility of: 16%
+Comparing: Person g with Person l
+these two people have a compatibility of: 29%
+Comparing: Person g with Person m
+these two people have a compatibility of: 9%
+Comparing: Person g with Person n
+these two people have a compatibility of: 21%
+Comparing: Person g with Person o
+these two people have a compatibility of: 11%
+Comparing: Person g with Person q
+these two people have a compatibility of: 8%
+Comparing: Person g with Person r
+these two people have a compatibility of: 29%
+Comparing: Person g with Person p
+these two people have a compatibility of: 15%
+Comparing: Person g with Person s
+these two people have a compatibility of: 5%
+Comparing: Diana with Person A
+these two people have a compatibility of: 30%
+Comparing: Diana with Person b
+these two people have a compatibility of: 21%
+Comparing: Diana with Person c
+these two people have a compatibility of: 12%
+Comparing: Diana with Person d
+these two people have a compatibility of: 19%
+Comparing: Diana with Person 1
+these two people have a compatibility of: 18%
+Comparing: Diana with Person e
+these two people have a compatibility of: 26%
+Comparing: Diana with Person g
+these two people have a compatibility of: 28%
+Comparing: Diana with Person 2
+these two people have a compatibility of: 30%
+Comparing: Diana with Person f
+these two people have a compatibility of: 27%
+Comparing: Diana with Person 3
+these two people have a compatibility of: 20%
+Comparing: Diana with Person h
+these two people have a compatibility of: 20%
+Comparing: Diana with Person 4
+these two people have a compatibility of: 18%
+Comparing: Diana with Person i
+these two people have a compatibility of: 25%
+Comparing: Diana with Person k
+these two people have a compatibility of: 18%
+Comparing: Diana with Person j
+these two people have a compatibility of: 22%
+Comparing: Diana with Person l
+these two people have a compatibility of: 15%
+Comparing: Diana with Person m
+these two people have a compatibility of: 21%
+Comparing: Diana with Person n
+these two people have a compatibility of: 29%
+Comparing: Diana with Person o
+these two people have a compatibility of: 36%
+Comparing: Diana with Person q
+these two people have a compatibility of: 11%
+Comparing: Diana with Person p
+these two people have a compatibility of: 28%
+Comparing: Diana with Person r
+these two people have a compatibility of: 12%
+Comparing: Diana with Person s
+these two people have a compatibility of: 15%
+Comparing: Diana with Person u
+these two people have a compatibility of: 12%
+Comparing: Diana with Person t
+these two people have a compatibility of: 9%
+Comparing: Diana with Person v
+these two people have a compatibility of: 11%
+Comparing: Diana with Person w
+these two people have a compatibility of: 9%
+Comparing: Diana with Person x
+these two people have a compatibility of: 20%
+Comparing: Diana with Person y
+these two people have a compatibility of: 20%
+Comparing: Diana with Person z
+these two people have a compatibility of: 18%
+Comparing: Diana with fake sarah
+these two people have a compatibility of: 15%
+Comparing: Diana with Fake Sarah's Perfect Match
+these two people have a compatibility of: 14%
+Comparing: Diana with study buddy 123
+these two people have a compatibility of: 20%
+Comparing: Diana with sexyperson
+these two people have a compatibility of: 23%
+Comparing: Diana with sexualbeing
+these two people have a compatibility of: 32%
+Comparing: Diana with wild card
+these two people have a compatibility of: 20%
+Comparing: Diana with Study buddy 456
+these two people have a compatibility of: 26%
+Comparing: Diana with vwild
+these two people have a compatibility of: 15%
+Comparing: Diana with Sarah Sarah Sarah 
+these two people have a compatibility of: 21%
+Comparing: Diana with Sayruh
+these two people have a compatibility of: 45%
+Comparing: Person A with Person c
+these two people have a compatibility of: 0%
+Comparing: Person A with Person d
+these two people have a compatibility of: 23%
+Comparing: Person A with Person 1
+these two people have a compatibility of: 21%
+Comparing: Person A with Person b
+these two people have a compatibility of: 90%
+Comparing: Person A with Person e
+these two people have a compatibility of: 6%
+Comparing: Person A with Person f
+these two people have a compatibility of: 15%
+Comparing: Person A with Person 2
+these two people have a compatibility of: 13%
+Comparing: Person A with Person 3
+these two people have a compatibility of: 37%
+Comparing: Person A with Person h
+these two people have a compatibility of: 21%
+Comparing: Person A with Person 4
+these two people have a compatibility of: 18%
+Comparing: Person A with Person g
+these two people have a compatibility of: 3%
+Comparing: Person A with Person j
+these two people have a compatibility of: 34%
+Comparing: Person A with Person k
+these two people have a compatibility of: 5%
+Comparing: Person A with Person i
+these two people have a compatibility of: 23%
+Comparing: Person A with Person l
+these two people have a compatibility of: 21%
+Comparing: Person A with Person m
+these two people have a compatibility of: 15%
+Comparing: Person A with Person n
+these two people have a compatibility of: 35%
+Comparing: Person A with Person o
+these two people have a compatibility of: 37%
+Comparing: Person A with Person p
+these two people have a compatibility of: 38%
+Comparing: Person A with Person r
+these two people have a compatibility of: 21%
+Comparing: Person A with Person q
+these two people have a compatibility of: 14%
+Comparing: Person A with Person s
+these two people have a compatibility of: 3%
+Comparing: Person A with Person t
+these two people have a compatibility of: 32%
+Comparing: Person A with Person u
+these two people have a compatibility of: 0%
+Comparing: Person A with Person v
+these two people have a compatibility of: 21%
+Comparing: Person A with Person w
+these two people have a compatibility of: 14%
+Comparing: Person A with Person x
+these two people have a compatibility of: 15%
+Comparing: Person A with Person y
+these two people have a compatibility of: 0%
+Comparing: Person A with Person z
+these two people have a compatibility of: 21%
+Comparing: Person A with fake sarah
+these two people have a compatibility of: 21%
+Comparing: Person A with Fake Sarah's Perfect Match
+these two people have a compatibility of: 11%
+Comparing: Person A with study buddy 123
+these two people have a compatibility of: 20%
+Comparing: Person A with Study buddy 456
+these two people have a compatibility of: 26%
+Comparing: Person A with sexualbeing
+these two people have a compatibility of: 23%
+Comparing: Person A with wild card
+these two people have a compatibility of: 3%
+Comparing: Person A with sexyperson
+these two people have a compatibility of: 14%
+Comparing: Person A with Sarah Sarah Sarah 
+these two people have a compatibility of: 24%
+Comparing: Person A with Sayruh
+these two people have a compatibility of: 33%
+Comparing: Person b with Person c
+these two people have a compatibility of: 21%
+Comparing: Person A with vwild
+these two people have a compatibility of: 21%
+Comparing: Person b with Person 1
+these two people have a compatibility of: 6%
+Comparing: Person b with Person e
+these two people have a compatibility of: 15%
+Comparing: Person b with Person d
+these two people have a compatibility of: 8%
+Comparing: Person b with Person f
+these two people have a compatibility of: 6%
+Comparing: Person b with Person 2
+these two people have a compatibility of: 37%
+Comparing: Person b with Person g
+these two people have a compatibility of: 21%
+Comparing: Person b with Person 3
+these two people have a compatibility of: 25%
+Comparing: Person b with Person 4
+these two people have a compatibility of: 6%
+Comparing: Person b with Person i
+these two people have a compatibility of: 34%
+Comparing: Person b with Person h
+these two people have a compatibility of: 3%
+Comparing: Person b with Person j
+these two people have a compatibility of: 18%
+Comparing: Person b with Person k
+these two people have a compatibility of: 27%
+Comparing: Person b with Person l
+these two people have a compatibility of: 5%
+Comparing: Person b with Person n
+these two people have a compatibility of: 26%
+Comparing: Person b with Person o
+these two people have a compatibility of: 54%
+Comparing: Person b with Person p
+these two people have a compatibility of: 28%
+Comparing: Person b with Person m
+these two people have a compatibility of: 24%
+Comparing: Person b with Person q
+these two people have a compatibility of: 32%
+Comparing: Person b with Person r
+these two people have a compatibility of: 3%
+Comparing: Person b with Person s
+these two people have a compatibility of: 29%
+Comparing: Person b with Person t
+these two people have a compatibility of: 3%
+Comparing: Person b with Person v
+these two people have a compatibility of: 0%
+Comparing: Person b with Person w
+these two people have a compatibility of: 21%
+Comparing: Person b with Person x
+these two people have a compatibility of: 14%
+Comparing: Person b with Person u
+these two people have a compatibility of: 21%
+Comparing: Person b with Person z
+these two people have a compatibility of: 0%
+Comparing: Person b with fake sarah
+these two people have a compatibility of: 11%
+Comparing: Person b with Fake Sarah's Perfect Match
+these two people have a compatibility of: 21%
+Comparing: Person b with Person y
+these two people have a compatibility of: 21%
+Comparing: Person b with study buddy 123
+these two people have a compatibility of: 26%
+Comparing: Person b with Study buddy 456
+these two people have a compatibility of: 20%
+Comparing: Person b with sexyperson
+these two people have a compatibility of: 23%
+Comparing: Person b with sexualbeing
+these two people have a compatibility of: 17%
+Comparing: Person b with wild card
+these two people have a compatibility of: 21%
+Comparing: Person b with vwild
+these two people have a compatibility of: 3%
+Comparing: Person b with Sarah Sarah Sarah 
+these two people have a compatibility of: 12%
+Comparing: Person b with Sayruh
+these two people have a compatibility of: 23%
+Comparing: Person c with Person d
+these two people have a compatibility of: 93%
+Comparing: Person c with Person 1
+these two people have a compatibility of: 24%
+Comparing: Person c with Person f
+these two people have a compatibility of: 18%
+Comparing: Person c with Person 2
+these two people have a compatibility of: 3%
+Comparing: Person c with Person g
+these two people have a compatibility of: 0%
+Comparing: Person c with Person e
+these two people have a compatibility of: 20%
+Comparing: Person c with Person h
+these two people have a compatibility of: 21%
+Comparing: Person c with Person 4
+these two people have a compatibility of: 29%
+Comparing: Person c with Person i
+these two people have a compatibility of: 0%
+Comparing: Person c with Person j
+these two people have a compatibility of: 21%
+Comparing: Person c with Person 3
+these two people have a compatibility of: 36%
+Comparing: Person c with Person k
+these two people have a compatibility of: 5%
+Comparing: Person c with Person l
+these two people have a compatibility of: 23%
+Comparing: Person c with Person m
+these two people have a compatibility of: 25%
+Comparing: Person c with Person n
+these two people have a compatibility of: 20%
+Comparing: Person c with Person o
+these two people have a compatibility of: 12%
+Comparing: Person c with Person p
+these two people have a compatibility of: 32%
+Comparing: Person c with Person q
+these two people have a compatibility of: 3%
+Comparing: Person c with Person r
+these two people have a compatibility of: 24%
+Comparing: Person c with Person s
+these two people have a compatibility of: 17%
+Comparing: Person c with Person u
+these two people have a compatibility of: 47%
+Comparing: Person c with Person v
+these two people have a compatibility of: 88%
+Comparing: Person c with Person t
+these two people have a compatibility of: 35%
+Comparing: Person c with Person w
+these two people have a compatibility of: 9%
+Comparing: Person c with Person x
+these two people have a compatibility of: 18%
+Comparing: Person c with Person y
+these two people have a compatibility of: 17%
+Comparing: Person c with Person z
+these two people have a compatibility of: 24%
+Comparing: Person c with Fake Sarah's Perfect Match
+these two people have a compatibility of: 42%
+Comparing: Person c with study buddy 123
+these two people have a compatibility of: 9%
+Comparing: Person c with fake sarah
+these two people have a compatibility of: 43%
+Comparing: Person c with Study buddy 456
+these two people have a compatibility of: 18%
+Comparing: Person c with sexyperson
+these two people have a compatibility of: 16%
+Comparing: Person c with sexualbeing
+these two people have a compatibility of: 23%
+Comparing: Person c with wild card
+these two people have a compatibility of: 19%
+Comparing: Person c with vwild
+these two people have a compatibility of: 46%
+Comparing: Person c with Sayruh
+these two people have a compatibility of: 21%
+Comparing: Person d with Person 1
+these two people have a compatibility of: 9%
+Comparing: Person c with Sarah Sarah Sarah 
+these two people have a compatibility of: 21%
+Comparing: Person d with Person e
+these two people have a compatibility of: 9%
+Comparing: Person d with Person 2
+these two people have a compatibility of: 21%
+Comparing: Person d with Person g
+these two people have a compatibility of: 21%
+Comparing: Person d with Person f
+these two people have a compatibility of: 11%
+Comparing: Person d with Person 3
+these two people have a compatibility of: 26%
+Comparing: Person d with Person h
+these two people have a compatibility of: 6%
+Comparing: Person d with Person 4
+these two people have a compatibility of: 17%
+Comparing: Person d with Person i
+these two people have a compatibility of: 21%
+Comparing: Person d with Person j
+these two people have a compatibility of: 6%
+Comparing: Person d with Person k
+these two people have a compatibility of: 21%
+Comparing: Person d with Person l
+these two people have a compatibility of: 11%
+Comparing: Person d with Person m
+these two people have a compatibility of: 28%
+Comparing: Person d with Person n
+these two people have a compatibility of: 5%
+Comparing: Person d with Person o
+these two people have a compatibility of: 15%
+Comparing: Person d with Person p
+these two people have a compatibility of: 20%
+Comparing: Person d with Person q
+these two people have a compatibility of: 26%
+Comparing: Person d with Person s
+these two people have a compatibility of: 38%
+Comparing: Person d with Person t
+these two people have a compatibility of: 18%
+Comparing: Person d with Person u
+these two people have a compatibility of: 83%
+Comparing: Person d with Person r
+these two people have a compatibility of: 9%
+Comparing: Person d with Person w
+these two people have a compatibility of: 18%
+Comparing: Person d with Person v
+these two people have a compatibility of: 54%
+Comparing: Person d with Person y
+these two people have a compatibility of: 24%
+Comparing: Person d with Person x
+these two people have a compatibility of: 3%
+Comparing: Person d with fake sarah
+these two people have a compatibility of: 40%
+Comparing: Person d with Fake Sarah's Perfect Match
+these two people have a compatibility of: 47%
+Comparing: Person d with study buddy 123
+these two people have a compatibility of: 12%
+Comparing: Person d with Person z
+these two people have a compatibility of: 23%
+Comparing: Person d with sexyperson
+these two people have a compatibility of: 19%
+Comparing: Person d with sexualbeing
+these two people have a compatibility of: 7%
+Comparing: Person d with Study buddy 456
+these two people have a compatibility of: 3%
+Comparing: Person d with wild card
+these two people have a compatibility of: 43%
+Comparing: Person d with vwild
+these two people have a compatibility of: 28%
+Comparing: Person d with Sarah Sarah Sarah 
+these two people have a compatibility of: 20%
+Comparing: Person d with Sayruh
+these two people have a compatibility of: 11%
+Comparing: Person 1 with Person e
+these two people have a compatibility of: 23%
+Comparing: Person 1 with Person f
+these two people have a compatibility of: 18%
+Comparing: Person 1 with Person g
+these two people have a compatibility of: 23%
+Comparing: Person 1 with Person 2
+these two people have a compatibility of: 30%
+Comparing: Person 1 with Person h
+these two people have a compatibility of: 27%
+Comparing: Person 1 with Person 3
+these two people have a compatibility of: 9%
+Comparing: Person 1 with Person 4
+these two people have a compatibility of: 19%
+Comparing: Person 1 with Person i
+these two people have a compatibility of: 27%
+Comparing: Person 1 with Person j
+these two people have a compatibility of: 24%
+Comparing: Person 1 with Person k
+these two people have a compatibility of: 27%
+Comparing: Person 1 with Person l
+these two people have a compatibility of: 21%
+Comparing: Person 1 with Person m
+these two people have a compatibility of: 18%
+Comparing: Person 1 with Person o
+these two people have a compatibility of: 21%
+Comparing: Person 1 with Person n
+these two people have a compatibility of: 11%
+Comparing: Person 1 with Person p
+these two people have a compatibility of: 15%
+Comparing: Person 1 with Person q
+these two people have a compatibility of: 33%
+Comparing: Person 1 with Person r
+these two people have a compatibility of: 18%
+Comparing: Person 1 with Person s
+these two people have a compatibility of: 40%
+Comparing: Person 1 with Person t
+these two people have a compatibility of: 25%
+Comparing: Person 1 with Person u
+these two people have a compatibility of: 29%
+Comparing: Person 1 with Person v
+these two people have a compatibility of: 18%
+Comparing: Person 1 with Person w
+these two people have a compatibility of: 15%
