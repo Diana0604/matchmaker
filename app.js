@@ -1,3 +1,6 @@
+var query = require('cli-interact').getYesNo;
+
+
 var MongoClient = require('mongodb').MongoClient;
 var url = "mongodb+srv://admin:admin@valentine-abe6i.mongodb.net/test?retryWrites=true&w=majority";
 //var url2 = "mongodb+srv://admin:admin@cluster0-uxcga.mongodb.net/test?retryWrites=true&w=majority";
@@ -72,13 +75,13 @@ horoscope = {
   "Pisces":["Cancer", "Scorpio"],
   "Cancer":["Pisces", "Scorpio"],
   "Scorpio":["Cancer", "Pisces"],
-  "Aries":["Leo", "Libra", "Sagittarius"],
   "Sagittarius":["Aries", "Leo", "Libra"],
   "Leo":["Aries", "Sagittarius", "Libra"],
   "Libra":["Aries", "Leo", "Sagittarius"],
   "Taurus":["Virgo", "Capricorn"],
   "Virgo":["Taurus", "Capricorn"],
-  "Capricorn":["Virgo", "Taurus"]
+  "Capricorn":["Virgo", "Taurus"],
+  "Aries":["Leo", "Libra", "Sagittarius"]
 }
 //% of compatible
 compatibilities = [5, 6, 5, 3, 0, 3, 3, 5, 3, 3, 3, 2, 3, 3, 5, 6, 3, 2, 6, 3, 3, 6, 5, 6, 2, 3];
@@ -91,39 +94,60 @@ console.log(totalC);
 */
 
 function compareAnswers(index, answerA, answerB){
+  //console.log('comparing: ');
+  //console.log('answerA: ' + answerA);
+  //console.log('answerB: ' + answerB);
   if(sameAnswersCat.has(index)){
+    //console.log('is same answer');
     if(answerA === answerB){
+      //console.log('matched');
       return compatibilities[index];
     }
     return 0;
   }
   if(oppositeAnswerCat.has(index)){
+    //console.log('is opposite answer');
     if(answerA != answerB){
+      //console.log('it\s a match');
       return compatibilities[index];
     }
     return 0;
   }
   if(almostOppositeAnswerCat.has(index)){
+    //console.log('is almost opposite answer');
     if(answerA === almostOppositeNeutralAnswer[index] && answerB === almostOppositeNeutralAnswer[index]){
+      //console.log('same answer and comp');
       return compatibilities[index];
     }
     if(answerA != almostOppositeNeutralAnswer[index] && answerB != almostOppositeNeutralAnswer[index]){
       if(answerA != answerB){
+        //console.log('diff comp answers');
         return compatibilities[index];
       }
     }
     return 0;
   }
   if(specialQuestionsCat.has(index)){
+    //console.log('special question');
     if(specialQuestions[index].answerA === answerB || specialQuestions[index].answerB === answerA){
+      //console.log('match');
       return compatibilities[index];
     }
     return 0;
   }
   if(index === 17){
-    if(horoscope.answerA.includes(answerB) || horoscope.answerB.includes(answerA)){
-      return compatibilities[index];
-    }
+    //console.log('question 17');
+    //console.log(answerA);
+    //console.log(horoscope[answerA]);
+    //console.log(answerB);
+    //console.log(horoscope[answerB]);
+    //if(String(answerA) === 'Aries' || String(answerB) === 'Aries'){
+    //  console.log('aries DETECTED');
+    //}
+    //if(horoscope[answerA].includes(answerB) || horoscope[answerB].includes(answerA)){
+      //console.log('match');
+    //  return compatibilities[index];
+    //}
     return 0;
   }
   return 0;
@@ -141,9 +165,6 @@ MongoClient.connect(url, {poolSize: 10, bufferMaxEntries: 0, reconnectTries: 500
       function tidy(user){
         var untidyAnswerList = user.answerList;
         return new Promise((resolve, reject) => {
-          if(user.isTidy){
-            resolve (user.answerList);
-          } else{
             var count = 0;
             var answerList = [];
             untidyAnswerList.forEach(function(answerObj, index){
@@ -156,13 +177,11 @@ MongoClient.connect(url, {poolSize: 10, bufferMaxEntries: 0, reconnectTries: 500
                 count++;
                 answerList[Number(questionIndex)-1] = answer[0].choice;
                 if(count === 26){
-                  user.answerList = answerList;
-                  user.isTidy = true;
-                  resolve(answerList);
+                  //user.answerList = answerList;
+                  resolve({username:user.username, answerList:answerList});
                 }
               });
             });
-          }
         });
       }
 
@@ -179,15 +198,27 @@ MongoClient.connect(url, {poolSize: 10, bufferMaxEntries: 0, reconnectTries: 500
         usersAnswered.forEach(function(userA, userIndex){
           userIndex = 0;
           userA.compatibility = [];
-          tidy(userA).then(answerListA => {
+          tidy(userA).then(infoUserA => {
             for(var i = userIndex + 1; i < usersAnswered.length; i++){
+              //console.log('index: ' + i);
               var userB = usersAnswered[i];
               //tidy answers
-              tidy(userB).then(answerListB => {
+              tidy(userB).then(infoUserB => {
+                answerListA = infoUserA.answerList;
+                usernameA = infoUserA.username;
+                answerListB = infoUserB.answerList;
+                usernameB = infoUserB.username;
+                //console.log('comparing: ');
+                //console.log(usernameA);
+                //console.log(answerListA);
+                //console.log('with:');
+                //console.log(usernameB);
+                //console.log(answerListB);
                 userA.compatibility[userB._id] = 0;
-                answerListA.forEach(function(answer, index){
-                answerB = answerListB[index];
-                userA.compatibility[userB._id] += compareAnswers(index, answer, answerB);
+                answerListA.forEach(function(answerA, index){
+                var answerB = answerListB[index];
+                userA.compatibility[userB._id] += compareAnswers(index, answerA, answerB);
+                //var answer = query('ready for next');
               });
               console.log('these two people have a compatibility of: ' + userA.compatibility[userB._id] + '%');
             }).catch((error)=>{
