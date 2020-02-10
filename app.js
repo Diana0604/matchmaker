@@ -62,20 +62,19 @@ specialQuestions[22].set("I put my hand on their knee and give them a knowing lo
 specialQuestions[22].set("I entice them back to my flat with the promise of a good movie and wine.","I entice them back to my flat with the promise of a good movie and wine.");
 specialQuestions[22].set("I scream ‘Wanna have sex!?’ as they walk by.","After a year of planning, I walk up to them and say hi.");
 specialQuestions[22].set("I write them a song about my feelings.","I perform my mating dance for them.");
-horoscope = {
-  "Aquarius":["Gemini"],
-  "Gemini":["Aquarius"],
-  "Pisces":["Cancer", "Scorpio"],
-  "Cancer":["Pisces", "Scorpio"],
-  "Scorpio":["Cancer", "Pisces"],
-  "Sagittarius":["Aries", "Leo", "Libra"],
-  "Leo":["Aries", "Sagittarius", "Libra"],
-  "Libra":["Aries", "Leo", "Sagittarius"],
-  "Taurus":["Virgo", "Capricorn"],
-  "Virgo":["Taurus", "Capricorn"],
-  "Capricorn":["Virgo", "Taurus"],
-  "Aries":["Leo", "Libra", "Sagittarius"]
-}
+horoscope = new Map()
+horoscope.set("Aquarius", ["Gemini"]);
+horoscope.set("Gemini",["Aquarius"]);
+horoscope.set("Pisces",["Cancer", "Scorpio"]);
+horoscope.set("Cancer",["Pisces", "Scorpio"]);
+horoscope.set("Scorpio",["Cancer", "Pisces"]);
+horoscope.set("Sagittarius",["Aries", "Leo", "Libra"]);
+horoscope.set("Leo",["Aries", "Sagittarius", "Libra"]);
+horoscope.set("Libra",["Aries", "Leo", "Sagittarius"]);
+horoscope.set("Taurus",["Virgo", "Capricorn"]);
+horoscope.set("Virgo",["Taurus", "Capricorn"]);
+horoscope.set("Capricorn",["Virgo", "Taurus"]);
+horoscope.set("Aries",["Leo", "Libra", "Sagittarius"]);
 //% of compatible
 compatibilities = [5, 6, 5, 3, 0, 3, 3, 5, 3, 3, 3, 2, 3, 3, 5, 6, 3, 2, 6, 3, 3, 6, 5, 6, 2, 3];
 /*
@@ -167,16 +166,20 @@ function compareAnswers(index, answerA, answerB){
     str += answerB + ' has ' + specialQuestions[index].get(answerB) + '\n';
     //if(specialQuestions[index].answerA === answerB || specialQuestions[index].answerB === answerA){
     if(specialQuestions[index].get(answerA) === answerB || specialQuestions[index].get(answerB) === answerA){
+      /*
       fs.appendFile('answers.txt', str + ' add ' + compatibilities[index] + '% of comp \n', function (err) { 
         if (err)
         console.log(err);
       });
+      */
       return compatibilities[index];
     }
+    /*
     fs.appendFile('answers.txt', str, function (err) { 
       if (err)
       console.log(err);
     });
+    */
     return 0;
   }
   if(index === 17){
@@ -193,10 +196,10 @@ function compareAnswers(index, answerA, answerB){
     //if(String(answerA) === 'Aries' || String(answerB) === 'Aries'){
     //  console.log('aries DETECTED');
     //}
-    //if(horoscope[answerA].includes(answerB) || horoscope[answerB].includes(answerA)){
-      //console.log('match');
-    //  return compatibilities[index];
-    //}
+    if(horoscope.get(answerA).includes(answerB)){
+      console.log('match');
+      return compatibilities[index];
+    }
     return 0;
   }
   /*

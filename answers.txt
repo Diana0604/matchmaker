@@ -1,0 +1,33 @@
+Comparing: Pancakes being cooked. with The musty smell of a wooden cabin isolated from the hustle and bustle of the city.
+kind of answer: special question 
+Pancakes being cooked. has The musty smell of a wooden cabin isolated from the hustle and bustle of the city.
+The musty smell of a wooden cabin isolated from the hustle and bustle of the city. has undefined
+ add 5% of comp 
+Comparing: Gin&Tonic with A shot (or 12) of Tequila
+kind of answer: special question 
+Gin&Tonic has A shot (or 12) of Tequila
+A shot (or 12) of Tequila has undefined
+ add 3% of comp 
+Comparing: Commedia dell’arte (A lot of character, but I don’t speak) with An escape room is not a genre of theatre (I refuse to answer this question)
+kind of answer: special question 
+Commedia dell’arte (A lot of character, but I don’t speak) has An escape room is not a genre of theatre (I refuse to answer this question)
+An escape room is not a genre of theatre (I refuse to answer this question) has undefined
+ add 3% of comp 
+Comparing: Awkwardly dancing next to the other person and hoping they notice me. with I just yell ‘Hey I like you!’ while they walk by. 
+kind of answer: special question 
+Awkwardly dancing next to the other person and hoping they notice me. has I just yell ‘Hey I like you!’ while they walk by.
+I just yell ‘Hey I like you!’ while they walk by.  has undefined
+Comparing: Travel to a different country. with Apply to Royal Central School of Speech and Drama (We’ll see how it goes ;) )
+kind of answer: special question 
+Travel to a different country. has Apply to Royal Central School of Speech and Drama (We’ll see how it goes ;) )
+Apply to Royal Central School of Speech and Drama (We’ll see how it goes ;) ) has undefined
+ add 3% of comp 
+Comparing: Something plain and boring, I wasn’t prepared! with My days of the week undies! Yaaay!
+kind of answer: special question 
+Something plain and boring, I wasn’t prepared! has My days of the week undies! Yaaay!
+My days of the week undies! Yaaay! has undefined
+ add 3% of comp 
+Comparing: I put my hand on their knee and give them a knowing look. with I initiate a drunk make out. 
+kind of answer: special question 
+I put my hand on their knee and give them a knowing look. has I initiate a drunk make out.
+I initiate a drunk make out.  has undefined
