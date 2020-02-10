@@ -76,7 +76,7 @@ horoscope.set("Virgo",["Taurus", "Capricorn"]);
 horoscope.set("Capricorn",["Virgo", "Taurus"]);
 horoscope.set("Aries",["Leo", "Libra", "Sagittarius"]);
 //% of compatible
-compatibilities = [5, 6, 5, 3, 0, 3, 3, 5, 3, 3, 3, 2, 3, 3, 5, 6, 3, 2, 6, 3, 3, 6, 5, 6, 2, 3];
+compatibilities = [5, 6, 5, 1.5, 1.5, 3, 3, 5, 3, 3, 3, 2, 3, 3, 5, 6, 3, 2, 6, 3, 3, 6, 5, 6, 2, 3];
 /*
 totalC = 0;
 compatibilities.forEach((comp) => {
@@ -85,8 +85,12 @@ compatibilities.forEach((comp) => {
 console.log(totalC);
 */
 
+answer3A = "";
+answer3B = "";
+
 function compareAnswers(index, answerA, answerB){
   var str = "";
+  str += "comparing " + answerA + " with " + answerB;
   if(specialQuestionsCat.has(index)) {
     str = 'Comparing: ' + answerA + ' with ' + answerB + '\n';
   }
@@ -160,6 +164,7 @@ function compareAnswers(index, answerA, answerB){
     */
     return 0;
   }
+  //special
   if(specialQuestionsCat.has(index)){
     str += 'kind of answer: special question \n';
     str += answerA + ' has ' + specialQuestions[index].get(answerA) + '\n';
@@ -182,6 +187,7 @@ function compareAnswers(index, answerA, answerB){
     */
     return 0;
   }
+  //horoscope
   if(index === 17){
     /*
     fs.appendFile('answers.txt', str + 'kind of answer: horoscope (not doing it) \n', function (err) { 
@@ -197,10 +203,25 @@ function compareAnswers(index, answerA, answerB){
     //  console.log('aries DETECTED');
     //}
     if(horoscope.get(answerA).includes(answerB)){
-      console.log('match');
+      //console.log('match');
       return compatibilities[index];
     }
     return 0;
+  }
+  if(index === 3){
+    answer3A = answerA;
+    answer3B = answerB;
+    return 0;
+  }
+  if(index === 4){
+    var comp = 0;
+    if(answer3A === answerB){
+      comp += compatibilities[3];
+    }
+    if(answer3B === answerA){
+      comp += compatibilities[4];
+    }
+    return comp;
   }
   /*
   fs.appendFile('answers.txt', str + 'kind of answer: not implemented: ' + index + ' \n', function (err) { 
