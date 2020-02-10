@@ -84,31 +84,34 @@ MongoClient.connect(url, {poolSize: 10, bufferMaxEntries: 0, reconnectTries: 500
         });
 
         //iterate (for now just the first two)
-        usersAnswered.forEach(function(userA){
-          var userB = usersAnswered[1];
-          //tidy answers
+        usersAnswered.forEach(function(userA, userIndex){
+          userIndex = 0;
+          userA.compatibility = [];
           tidy(userA).then(answerListA => {
-            tidy(userB).then(answerListB => {
-              var compatibility = 0;
-              answerListA.forEach(function(answer, index){
+            for(var i = userIndex + 1; i < usersAnswered.length; i++){
+              var userB = usersAnswered[i];
+              //tidy answers
+              tidy(userB).then(answerListB => {
+                userA.compatibility[userB._id] = 0;
+                answerListA.forEach(function(answer, index){
                 answerB = answerListB[index];
                 if(sameAnswersCat.has(index)){
                 if(answer === answerListB[index]){
-                  compatibility += compatibilities[index];
+                  userA.compatibility[userB._id] += compatibilities[index];
                 }
                 }
                 if(oppositeAnswerCat.has(index)){
                   if(answer != answerListB[index]){
-                    compatibility += compatibilities[index];
+                    userA.compatibility[userB._id] += compatibilities[index];
                   }
                 }
                 if(almostOppositeAnswerCat.has(index)){
                   if(answer === almostOppositeNeutralAnswer[index] && answerListB[index] === almostOppositeNeutralAnswer[index]){
-                    compatibility += compatibilities[index];
+                    userA.compatibility[userB._id] += compatibilities[index];
                   }
                   if(answer != almostOppositeNeutralAnswer[index] && answerListB[index] != almostOppositeNeutralAnswer[index]){
                     if(answer != answerListB[index]){
-                      compatibility += compatibilities[index];
+                      userA.compatibility[userB._id] += compatibilities[index];
                     }
                   }
                 }
@@ -116,25 +119,25 @@ MongoClient.connect(url, {poolSize: 10, bufferMaxEntries: 0, reconnectTries: 500
                   switch (answer) {
                     case "The scent of your lover." : {
                       if(answerB === "The scent of your lover."){
-                        compatibility += compatibilities[index];
+                        userA.compatibility[userB._id] += compatibilities[index];
                       }
                       break;
                     }
                     case "Pancakes being cooked." : {
                       if(answerB === "The musty smell of a wooden cabin isolated from the hustle and bustle of the city."){
-                        compatibility += compatibilities[index];
+                        userA.compatibility[userB._id] += compatibilities[index];
                       }
                       break;
                     }
                     case "A fresh rain shower." : {
                       if(answerB === "The salty ocean breeze from the deck of your house boat."){
-                        compatibility += compatibilities[index];
+                        userA.compatibility[userB._id] += compatibilities[index];
                       }
                       break;
                     }
                     case "A jasmine scented bubble bath." : {
                       if(answerB === "An orange tree growing outside your window."){
-                        compatibility += compatibilities[index];
+                        userA.compatibility[userB._id] += compatibilities[index];
                       }
                       break;
                     }
@@ -142,19 +145,19 @@ MongoClient.connect(url, {poolSize: 10, bufferMaxEntries: 0, reconnectTries: 500
                   switch (answerB) {
                     case "Pancakes being cooked." : {
                       if(answer === "The musty smell of a wooden cabin isolated from the hustle and bustle of the city."){
-                        compatibility += compatibilities[index];
+                        userA.compatibility[userB._id] += compatibilities[index];
                       }
                       break;
                     }
                     case "A fresh rain shower." : {
                       if(answer === "The salty ocean breeze from the deck of your house boat."){
-                        compatibility += compatibilities[index];
+                        userA.compatibility[userB._id] += compatibilities[index];
                       }
                       break;
                     }
                     case "A jasmine scented bubble bath." : {
                       if(answer === "An orange tree growing outside your window."){
-                        compatibility += compatibilities[index];
+                        userA.compatibility[userB._id] += compatibilities[index];
                       }
                       break;
                     }
@@ -164,25 +167,25 @@ MongoClient.connect(url, {poolSize: 10, bufferMaxEntries: 0, reconnectTries: 500
                   switch (answer) {
                     case "Gin&Tonic" : {
                       if(answerB === "A shot (or 12) of Tequila"){
-                        compatibility += compatibilities[index];
+                        userA.compatibility[userB._id] += compatibilities[index];
                       }
                       break;
                     }
                     case "IPA" : {
                       if(answerB === "Lager"){
-                        compatibility += compatibilities[index];
+                        userA.compatibility[userB._id] += compatibilities[index];
                       }
                       break;
                     }
                     case "Cider" : {
                       if(answerB === "A fruity cocktail"){
-                        compatibility += compatibilities[index];
+                        userA.compatibility[userB._id] += compatibilities[index];
                       }
                       break;
                     }
                     case "The most expensive thing at the bar" : {
                       if(answerB === "Nesquick"){
-                        compatibility += compatibilities[index];
+                        userA.compatibility[userB._id] += compatibilities[index];
                       }
                       break;
                     }
@@ -190,25 +193,25 @@ MongoClient.connect(url, {poolSize: 10, bufferMaxEntries: 0, reconnectTries: 500
                   switch (answerB) {
                     case "Gin&Tonic" : {
                       if(answer === "A shot (or 12) of Tequila"){
-                        compatibility += compatibilities[index];
+                        userA.compatibility[userB._id] += compatibilities[index];
                       }
                       break;
                     }
                     case "IPA" : {
                       if(answer === "Lager"){
-                        compatibility += compatibilities[index];
+                        userA.compatibility[userB._id] += compatibilities[index];
                       }
                       break;
                     }
                     case "Cider" : {
                       if(answer === "A fruity cocktail"){
-                        compatibility += compatibilities[index];
+                        userA.compatibility[userB._id] += compatibilities[index];
                       }
                       break;
                     }
                     case "The most expensive thing at the bar" : {
                       if(answer === "Nesquick"){
-                        compatibility += compatibilities[index];
+                        userA.compatibility[userB._id] += compatibilities[index];
                       }
                       break;
                     }
@@ -219,31 +222,31 @@ MongoClient.connect(url, {poolSize: 10, bufferMaxEntries: 0, reconnectTries: 500
                   switch(answer) {
                     case "Commedia dell'arte (A lot of character, but I don't speak)" : {
                       if(answerB.includes("not a genre of theatre")){
-                        compatibility += compatibilities[index];
+                        userA.compatibility[userB._id] += compatibilities[index];
                       }
                       break;
                     }
                     case "Shakespeare (Romantic, but hard to understand)" : {
                       if(answerB.includes("experimental piece")){
-                        compatibility += compatibilities[index];
+                        userA.compatibility[userB._id] += compatibilities[index];
                       }
                       break;
                     }
                     case "An escape room (once you enter, in I'll never let you go)" : {
                       if(answerB.includes("kid's show")){
-                        compatibility += compatibilities[index];
+                        userA.compatibility[userB._id] += compatibilities[index];
                       }
                       break;
                     }
                     case "A musical (Loud and in your face, with a lot of glitter)" : {
                       if(answerB.includes("A 2 act play")){
-                        compatibility += compatibilities[index];
+                        userA.compatibility[userB._id] += compatibilities[index];
                       }
                       break;
                     }
                     case "Opera (People tend to dislike me and fall asleep)" : {
                       if(answerB.includes("A drama")){
-                        compatibility += compatibilities[index];
+                        userA.compatibility[userB._id] += compatibilities[index];
                       }
                       break;
                     }
@@ -251,31 +254,31 @@ MongoClient.connect(url, {poolSize: 10, bufferMaxEntries: 0, reconnectTries: 500
                   switch(answerB) {
                     case "A kid's show (Friendly and innocent!)" : {
                       if(answer.includes("once you enter")){
-                        compatibility += compatibilities[index];
+                        userA.compatibility[userB._id] += compatibilities[index];
                       }
                       break;
                     }
                     case "A drama (I have a tragic backstory)" : {
                       if(answer.includes("Opera")){
-                        compatibility += compatibilities[index];
+                        userA.compatibility[userB._id] += compatibilities[index];
                       }
                       break;
                     }
                     case "A 2 act play (I'm everywhere)" : {
                       if(answer.includes("musical")){
-                        compatibility += compatibilities[index];
+                        userA.compatibility[userB._id] += compatibilities[index];
                       }
                       break;
                     }
                     case "An escape room is not a genre of theatre (I refuse to answer this question)" : {
                       if(answer.includes("Commedia")){
-                        compatibility += compatibilities[index];
+                        userA.compatibility[userB._id] += compatibilities[index];
                       }
                       break;
                     }
                     case "An experimental piece (Good luck figuring me out!)" : {
                       if(answer.includes("Shakespeare")){
-                        compatibility += compatibilities[index];
+                        userA.compatibility[userB._id] += compatibilities[index];
                       }
                       break;
                     }
@@ -285,31 +288,31 @@ MongoClient.connect(url, {poolSize: 10, bufferMaxEntries: 0, reconnectTries: 500
                   switch(answer) {
                     case "Awkwardly dancing next to the other person and hoping they notice me." : {
                       if(answerB.includes("I just yell")){
-                        compatibility += compatibilities[index];
+                        userA.compatibility[userB._id] += compatibilities[index];
                       }
                       break;
                     }
                     case "A lot of laughing and eye contact." : {
                       if(answerB.includes("Impress them with my")){
-                        compatibility += compatibilities[index];
+                        userA.compatibility[userB._id] += compatibilities[index];
                       }
                       break;
                     }
                     case "Showing a little skin" : {
                       if(answerB.includes("forward text")){
-                        compatibility += compatibilities[index];
+                        userA.compatibility[userB._id] += compatibilities[index];
                       }
                       break;
                     }
                     case "I don't have any flirting moves. I'm taking this quiz to find true love." : {
                       if(answerB.includes("beneath me")){
-                        compatibility += compatibilities[index];
+                        userA.compatibility[userB._id] += compatibilities[index];
                       }
                       break;
                     }
                     case "Asking them to be my study partner." : {
                       if(answerB.includes("deep talk.")){
-                        compatibility += compatibilities[index];
+                        userA.compatibility[userB._id] += compatibilities[index];
                       }
                       break;
                     }
@@ -317,31 +320,31 @@ MongoClient.connect(url, {poolSize: 10, bufferMaxEntries: 0, reconnectTries: 500
                   switch(answerB) {
                     case "A vulnerable and deep talk." : {
                       if(answer.includes("study partner")){
-                        compatibility += compatibilities[index];
+                        userA.compatibility[userB._id] += compatibilities[index];
                       }
                       break;
                     }
                     case "Flirting is beneath me." : {
                       if(answer.includes("flirting moves")){
-                        compatibility += compatibilities[index];
+                        userA.compatibility[userB._id] += compatibilities[index];
                       }
                       break;
                     }
                     case "I just yell 'Hey I like you!' while they walk by." : {
                       if(answer.includes("dancing next to the other person")){
-                        compatibility += compatibilities[index];
+                        userA.compatibility[userB._id] += compatibilities[index];
                       }
                       break;
                     }
                     case "A flirty and forward text." : {
                       if(answer.includes("skin")){
-                        compatibility += compatibilities[index];
+                        userA.compatibility[userB._id] += compatibilities[index];
                       }
                       break;
                     }
                     case "Impress them with my intelligence and wit." : {
                       if(answer.includes("eye contact")){
-                        compatibility += compatibilities[index];
+                        userA.compatibility[userB._id] += compatibilities[index];
                       }
                       break;
                     }
@@ -351,31 +354,31 @@ MongoClient.connect(url, {poolSize: 10, bufferMaxEntries: 0, reconnectTries: 500
                   switch(answer) {
                     case "Travel to a different country." : {
                       if(answerB.includes("Royal Central School")){
-                        compatibility += compatibilities[index];
+                        userA.compatibility[userB._id] += compatibilities[index];
                       }
                       break;
                     }
                     case "Pretended I was a different person." : {
                       if(answerB.includes("hair")){
-                        compatibility += compatibilities[index];
+                        userA.compatibility[userB._id] += compatibilities[index];
                       }
                       break;
                     }
                     case "Something kinky that I'm not proud of." : {
                       if(answerB.includes("jumping")){
-                        compatibility += compatibilities[index];
+                        userA.compatibility[userB._id] += compatibilities[index];
                       }
                       break;
                     }
                     case "Nothing, I've never had the need to be ridiculous for sex." : {
                       if(answerB.includes("Nothing")){
-                        compatibility += compatibilities[index];
+                        userA.compatibility[userB._id] += compatibilities[index];
                       }
                       break;
                     }
                     case "Gave them a very expensive gift." : {
                       if(answerB.includes("salsa dancing")){
-                        compatibility += compatibilities[index];
+                        userA.compatibility[userB._id] += compatibilities[index];
                       }
                       break;
                     }
@@ -383,25 +386,25 @@ MongoClient.connect(url, {poolSize: 10, bufferMaxEntries: 0, reconnectTries: 500
                   switch(answerB) {
                     case "Bungee jumping." : {
                       if(answer.includes("kinky")){
-                        compatibility += compatibilities[index];
+                        userA.compatibility[userB._id] += compatibilities[index];
                       }
                       break;
                     }
                     case "Apply to Royal Central School of Speech and Drama (We'll see how it goes ;) )" : {
                       if(answer.includes("country")){
-                        compatibility += compatibilities[index];
+                        userA.compatibility[userB._id] += compatibilities[index];
                       }
                       break;
                     }
                     case "Cut my hair." : {
                       if(answer.includes("different person")){
-                        compatibility += compatibilities[index];
+                        userA.compatibility[userB._id] += compatibilities[index];
                       }
                       break;
                     }
                     case "Took salsa dancing classes (FOR THREE YEARS. DIDN'T GET ME ANYTHING)" : {
                       if(answer.includes("expensive gift")){
-                        compatibility += compatibilities[index];
+                        userA.compatibility[userB._id] += compatibilities[index];
                       }
                       break;
                     }
@@ -411,73 +414,73 @@ MongoClient.connect(url, {poolSize: 10, bufferMaxEntries: 0, reconnectTries: 500
                   switch(answer) {
                     case "Aquarius" : {
                       if(answerB.includes("Gemini")){
-                        compatibility += compatibilities[index];
+                        userA.compatibility[userB._id] += compatibilities[index];
                       }
                       break;
                     }
                     case "Gemini" : {
                       if(answerB.includes("Aquarius")){
-                        compatibility += compatibilities[index];
+                        userA.compatibility[userB._id] += compatibilities[index];
                       }
                       break;
                     }
                     case "Pisces" : {
                       if(answerB.includes("Cancer" || answerB.includes("Scorpio"))){
-                        compatibility += compatibilities[index];
+                        userA.compatibility[userB._id] += compatibilities[index];
                       }
                       break;
                     }
                     case "Cancer" : {
                       if(answerB.includes("Pisces" || answerB.includes("Scorpio"))){
-                        compatibility += compatibilities[index];
+                        userA.compatibility[userB._id] += compatibilities[index];
                       }
                       break;
                     }
                     case "Scorpio" : {
                       if(answerB.includes("Pisces" || answerB.includes("Cancer"))){
-                        compatibility += compatibilities[index];
+                        userA.compatibility[userB._id] += compatibilities[index];
                       }
                       break;
                     }
                     case "Aries" : {
                       if(answerB.includes("Leo") || answerB.includes("Libra") || answerB.includes("Sagittarius")){
-                        compatibility += compatibilities[index];
+                        userA.compatibility[userB._id] += compatibilities[index];
                       }
                       break;
                     }
                     case "Leo" : {
                       if(answerB.includes("Aries") || answerB.includes("Libra") || answerB.includes("Sagittarius")){
-                        compatibility += compatibilities[index];
+                        userA.compatibility[userB._id] += compatibilities[index];
                       }
                       break;
                     }
                     case "Libra" : {
                       if(answerB.includes("Leo") || answerB.includes("Aries") || answerB.includes("Sagittarius")){
-                        compatibility += compatibilities[index];
+                        userA.compatibility[userB._id] += compatibilities[index];
                       }
                       break;
                     }
                     case "Sagittarius" : {
                       if(answerB.includes("Leo") || answerB.includes("Libra") || answerB.includes("Aries")){
-                        compatibility += compatibilities[index];
+                        userA.compatibility[userB._id] += compatibilities[index];
                       }
                       break;
                     }
                     case "Taurus" : {
                       if(answerB.includes("Virgo") || answerB.includes("Capricorn")){
-                        compatibility += compatibilities[index];
+                        userA.compatibility[userB._id] += compatibilities[index];
                       }
                       break;
                     }
                     case "Capricorn" : {
                       if(answerB.includes("Virgo") || answerB.includes("Taurus")){
-                        compatibility += compatibilities[index];
+                        userA.compatibility[userB._id] += compatibilities[index];
                       }
                       break;
                     }
                     case "Virgo" : {
                       if(answerB.includes("Taurus") || answerB.includes("Capricorn")){
-                        compatibility += compatibilities[index];
+                        userA.compatibility[userB._id] += compatibilities[index];
                       }
                       break;
                     }
@@ -487,25 +490,25 @@ MongoClient.connect(url, {poolSize: 10, bufferMaxEntries: 0, reconnectTries: 500
                   switch(answer) {
                     case "Something plain and boring, I wasn't prepared!" : {
                       if(answerB.includes("week undies")){
-                        compatibility += compatibilities[index];
+                        userA.compatibility[userB._id] += compatibilities[index];
                       }
                       break;
                     }
                     case "A little red and lacy thing." : {
                       if(answerB.includes("sleek, and sexy")){
-                        compatibility += compatibilities[index];
+                        userA.compatibility[userB._id] += compatibilities[index];
                       }
                       break;
                     }
                     case "Something funny and colorful" : {
                       if(answerB.includes("Something funny and colorful")){
-                        compatibility += compatibilities[index];
+                        userA.compatibility[userB._id] += compatibilities[index];
                       }
                       break;
                     }
                     case "I'm not wearing any underwear ;)" : {
                       if(answerB.includes("entirely naked")){
-                        compatibility += compatibilities[index];
+                        userA.compatibility[userB._id] += compatibilities[index];
                       }
                       break;
                     }
@@ -513,19 +516,19 @@ MongoClient.connect(url, {poolSize: 10, bufferMaxEntries: 0, reconnectTries: 500
                   switch(answerB) {
                     case "I'm entirely naked." : {
                       if(answer.includes("not wearing any")){
-                        compatibility += compatibilities[index];
+                        userA.compatibility[userB._id] += compatibilities[index];
                       }
                       break;
                     }
                     case "My days of the week undies! Yaaay!" : {
                       if(answer.includes("prepared")){
-                        compatibility += compatibilities[index];
+                        userA.compatibility[userB._id] += compatibilities[index];
                       }
                       break;
                     }
                     case "Something black, sleek, and sexy." : {
                       if(answer.includes("red and lacy")){
-                        compatibility += compatibilities[index];
+                        userA.compatibility[userB._id] += compatibilities[index];
                       }
                       break;
                     }
@@ -535,25 +538,25 @@ MongoClient.connect(url, {poolSize: 10, bufferMaxEntries: 0, reconnectTries: 500
                   switch(answer) {
                     case "I put my hand on their knee and give them a knowing look." : {
                       if(answerB.includes("initiate a drunk")){
-                        compatibility += compatibilities[index];
+                        userA.compatibility[userB._id] += compatibilities[index];
                       }
                       break;
                     }
                     case "I entice them back to my flat with the promise of a good movie and wine." : {
                       if(answerB.includes("I entice them back to my flat with the promise of a good movie and wine.")){
-                        compatibility += compatibilities[index];
+                        userA.compatibility[userB._id] += compatibilities[index];
                       }
                       break;
                     }
                     case "I scream 'Wanna have sex!?' as they walk by." : {
                       if(answerB.includes("After a year of planning")){
-                        compatibility += compatibilities[index];
+                        userA.compatibility[userB._id] += compatibilities[index];
                       }
                       break;
                     }
                     case "I write a song about my feelings." : {
                       if(answerB.includes("I perform my mating dance for them.")){
-                        compatibility += compatibilities[index];
+                        userA.compatibility[userB._id] += compatibilities[index];
                       }
                       break;
                     }
@@ -561,29 +564,30 @@ MongoClient.connect(url, {poolSize: 10, bufferMaxEntries: 0, reconnectTries: 500
                   switch(answerB) {
                     case "I perform my mating dance for them." : {
                       if(answer.includes("song about")){
-                        compatibility += compatibilities[index];
+                        userA.compatibility[userB._id] += compatibilities[index];
                       }
                       break;
                     }
                     case "After a year of planning, I walk up to them and say hi." : {
                       if(answer.includes("scream")){
-                        compatibility += compatibilities[index];
+                        userA.compatibility[userB._id] += compatibilities[index];
                       }
                       break;
                     }
                     case "I initiate a drunk make out." : {
                       if(answer.includes("knee")){
-                        compatibility += compatibilities[index];
+                        userA.compatibility[userB._id] += compatibilities[index];
                       }
                       break;
                     }
                   }
                 }
               });
-              console.log('this two people have a compatibility of: ' + compatibility + '%');
+              console.log('these two people have a compatibility of: ' + userA.compatibility[userB._id] + '%');
             }).catch((error)=>{
               console.log(error);
             });
+            }
           }).catch((error) => {
             console.log(error);
           });
