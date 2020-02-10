@@ -1,6 +1,6 @@
 var query = require('cli-interact').getYesNo;
 var fs = require('fs');
-var DEBUG = 6;
+var DEBUG = 1;
 
 var MongoClient = require('mongodb').MongoClient;
 var url = "mongodb+srv://admin:admin@valentine-abe6i.mongodb.net/test?retryWrites=true&w=majority";
@@ -42,7 +42,7 @@ specialQuestions[10].set("An escape room (once you enter, in I’ll never let yo
 specialQuestions[10].set("A musical (Loud and in your face, with a lot of glitter)","A 2 act play (I’m everywhere)");
 specialQuestions[10].set("Opera (People tend to dislike me and fall asleep)","A drama (I have a tragic backstory)");
 specialQuestions[14] = new Map();
-specialQuestions[14].set("Awkwardly dancing next to the other person and hoping they notice me.","I just yell ‘Hey I like you!’ while they walk by.");
+specialQuestions[14].set("Awkwardly dancing next to the other person and hoping they notice me.","I just yell ‘Hey I like you!’ while they walk by. ");
 specialQuestions[14].set("A lot of laughing and eye contact.","Impress them with my intelligence and wit.");
 specialQuestions[14].set("Showing a little skin.","A flirty and forward text.");
 specialQuestions[14].set("I don’t have any flirting moves. I’m taking this quiz to find true love.","Flirting is beneath me.");
@@ -59,7 +59,7 @@ specialQuestions[20].set("A little red and lacy thing.","Something black, sleek,
 specialQuestions[20].set("Something funny and colorful.","Something funny and colorful.");
 specialQuestions[20].set("I’m not wearing any underwear ;)","I'm entirely naked.");
 specialQuestions[22] =  new Map();
-specialQuestions[22].set("I put my hand on their knee and give them a knowing look.","I initiate a drunk make out.");
+specialQuestions[22].set("I put my hand on their knee and give them a knowing look.","I initiate a drunk make out. ");
 specialQuestions[22].set("I entice them back to my flat with the promise of a good movie and wine.","I entice them back to my flat with the promise of a good movie and wine.");
 specialQuestions[22].set("I scream ‘Wanna have sex!?’ as they walk by.","After a year of planning, I walk up to them and say hi.");
 specialQuestions[22].set("I write them a song about my feelings.","I perform my mating dance for them.");
@@ -91,7 +91,7 @@ answer3B = "";
 
 function compareAnswers(index, answerA, answerB){
   var str = "";
-  if(DEBUG != -1) str += "comparing " + answerA + " with " + answerB;
+  if(DEBUG > 0) str += "comparing " + answerA + " with " + answerB +'\n';
   if(sameAnswersCat.has(index)){
     if(DEBUG === 1 || DEBUG === 2) str += 'kind of answer: same answer \n';
     if(answerA === answerB){
@@ -111,7 +111,7 @@ function compareAnswers(index, answerA, answerB){
   if(oppositeAnswerCat.has(index)){
     if(DEBUG === 1 || DEBUG === 3) str += 'answers.txt', 'kind of answer: opposite answer \n';
     if(answerA != answerB){
-      if(DEBUG === 1 || DEBUG === 3) fs.appendFile('answers.txt', str + ' add ' + compatibilities[index] + '% of comp \n', function (err) { 
+      if(DEBUG === 1 || DEBUG === 3) fs.appendFile('answers.txt', str + '\nadd ' + compatibilities[index] + '% of comp \n', function (err) { 
         if (err)
         console.log(err);
       });
@@ -174,7 +174,7 @@ function compareAnswers(index, answerA, answerB){
       if(err) console.log(err);
     });
     if(horoscope.get(answerA).includes(answerB)){
-      if(DEBUG === 1 || DEBUG === 6) str += 'matched!';
+      if(DEBUG === 1 || DEBUG === 6) str += 'adding a ' + compatibilities[index] + '% of comp \n';
       if(DEBUG === 1 || DEBUG === 6) fs.appendFile('answers.txt', str, function(err){
         if(err) console.log(err);
       });
@@ -189,16 +189,27 @@ function compareAnswers(index, answerA, answerB){
   if(index === 3){
     answer3A = answerA;
     answer3B = answerB;
+    if(DEBUG == 1 || DEBUT === 7) str += "kind of question: love language (give) \n";
+    fs.appendFile('answers.txt', str, function(err){
+      if(err) console.log(err);
+    });
     return 0;
   }
   if(index === 4){
+    if(DEBUG === 1 || DEBUG == 7) str+= "kind of question: (receive) love language \n";
     var comp = 0;
     if(answer3A === answerB){
+      if(DEBUG === 1 || DEBUG == 7) str += 'answer3A and 4B are the same\n Adding ' + compatibilities[3] + '\n';
       comp += compatibilities[3];
     }
     if(answer3B === answerA){
+      if(DEBUG === 1 || DEBUG == 7) str += 'answer3B and 4A are the same\n Adding ' + compatibilities[3] + '\n';
       comp += compatibilities[4];
     }
+    if(DEBUG === 1 || DEBUG === 7) fs.appendFile('answers.txt', str, function (err) { 
+      if (err)
+      console.log(err);
+    });
     return comp;
   }
   return 0;
@@ -244,14 +255,14 @@ MongoClient.connect(url, {poolSize: 10, bufferMaxEntries: 0, reconnectTries: 500
         });
 
         //iterate
-        usersAnswered.forEach(function(userA, userIndex){
-          //var userA = usersAnswered[1];
+        //usersAnswered.forEach(function(userA, userIndex){
+          var userA = usersAnswered[1];
           userA.compatibility = [];
           tidy(userA).then(infoUserA => {
-            for(var i = userIndex + 1; i < usersAnswered.length; i++){
+            //for(var i = userIndex + 1; i < usersAnswered.length; i++){
               //console.log('index: ' + i);
-              var userB = usersAnswered[i];
-              //var userB = usersAnswered[2];
+              //var userB = usersAnswered[i];
+              var userB = usersAnswered[2];
               //tidy answers
               tidy(userB).then(infoUserB => {
                 answerListA = infoUserA.answerList;
@@ -268,15 +279,15 @@ MongoClient.connect(url, {poolSize: 10, bufferMaxEntries: 0, reconnectTries: 500
                 if (err)
                 console.log(err);
                 });
-              console.log('these two people have a compatibility of: ' + userA.compatibility[userB._id] + '%');
+              //console.log('these two people have a compatibility of: ' + userA.compatibility[userB._id] + '%');
             }).catch((error)=>{
               console.log(error);
             });
-            }
+          //  }
           }).catch((error) => {
             console.log(error);
           });
         });
-      });
+      //});
     }
 });
